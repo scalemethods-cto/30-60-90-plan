@@ -3,795 +3,481 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ScaleLogix AI — Your First 90 Days</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<title>Your First 30–60–90 Days | ScaleLogix AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --bg-primary: #08080c;
-    --bg-card: #0f0f16;
-    --bg-card-hover: #141420;
-    --bg-elevated: #1a1a28;
-    --purple-deep: #653a92;
-    --purple-mid: #7966a2;
-    --purple-light: #868282;
-    --purple-glow: rgba(101, 58, 146, 0.15);
-    --purple-glow-strong: rgba(101, 58, 146, 0.35);
-    --orange-accent: #BB8575;
-    --orange-light: #D1BAA6;
-    --text-primary: #eeeef0;
-    --text-secondary: #9a9aab;
-    --text-muted: #6a6a7a;
-    --border: rgba(255,255,255,0.06);
-    --border-accent: rgba(101, 58, 146, 0.25);
-    --gradient-purple: linear-gradient(135deg, #653a92, #434e5e);
-    --gradient-card: linear-gradient(160deg, rgba(101,58,146,0.08), transparent 60%);
+    --black: #080c14;
+    --purple: #653a92;
+    --rose: #BB8575;
+    --cream: #F7F5F2;
+    --border: rgba(8,12,20,0.09);
   }
+  html { font-size: 16px; }
+  body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--black); line-height: 1.65; -webkit-font-smoothing: antialiased; }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  /* COVER */
+  .cover {
+    background: var(--black); min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 60px 64px 52px; position: relative; overflow: hidden;
+  }
+  .cover::before {
+    content: ''; position: absolute; top: -120px; right: -120px;
+    width: 560px; height: 560px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(101,58,146,0.18) 0%, transparent 70%);
+  }
+  .cover::after {
+    content: ''; position: absolute; bottom: -80px; left: -80px;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(187,133,117,0.10) 0%, transparent 70%);
+  }
+  .cover-top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .cover-logo img { height: 52px; width: auto; }
+  .cover-tag {
+    font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--rose); background: rgba(187,133,117,0.1);
+    border: 1px solid rgba(187,133,117,0.3); padding: 6px 14px; border-radius: 40px;
+  }
+  .cover-body { padding: 80px 0 40px; position: relative; z-index: 1; }
+  .cover-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--rose); margin-bottom: 24px; }
+  .cover-h1 { font-size: clamp(52px, 7vw, 84px); font-weight: 900; color: #fff; line-height: .98; letter-spacing: -.04em; margin-bottom: 32px; }
+  .cover-h1 em { font-style: normal; background: linear-gradient(135deg, var(--rose), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .cover-sub { font-size: 17px; font-weight: 400; color: rgba(247,245,242,0.7); max-width: 480px; line-height: 1.6; }
+  .cover-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; position: relative; z-index: 1; }
+  .cover-footer-brand { font-size: 13px; font-weight: 700; letter-spacing: .06em; color: rgba(247,245,242,0.5); }
+  .cover-footer-conf { font-size: 11px; color: rgba(247,245,242,0.3); letter-spacing: .06em; }
 
-  html {
-    scroll-behavior: smooth;
-    font-size: 16px;
-  }
+  /* PAGE */
+  .page { max-width: 860px; margin: 0 auto; padding: 72px 64px; }
 
-  body {
-    font-family: 'DM Sans', -apple-system, sans-serif;
-    background: var(--bg-primary);
-    color: var(--text-primary);
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
+  /* TYPOGRAPHY */
+  .eyebrow { font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--rose); margin-bottom: 10px; }
+  .section-title { font-size: clamp(36px, 5vw, 52px); font-weight: 900; color: var(--black); letter-spacing: -.03em; line-height: 1.05; margin-bottom: 6px; }
+  .section-title em { font-style: normal; color: var(--rose); }
+  .rule { width: 48px; height: 3px; background: linear-gradient(90deg, var(--rose), var(--purple)); border-radius: 2px; margin: 18px 0 32px; }
+  .lead { font-size: 17px; color: rgba(8,12,20,0.7); line-height: 1.65; margin-bottom: 36px; max-width: 660px; }
+  .body-text { font-size: 15px; color: rgba(8,12,20,0.72); line-height: 1.65; margin-bottom: 20px; }
+  hr.div { border: none; border-top: 1px solid rgba(8,12,20,0.08); margin: 64px 0; }
 
-  /* ── Noise texture overlay ── */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 9999;
+  /* PHASE BADGE */
+  .phase-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--black); color: #fff; padding: 10px 20px 10px 14px;
+    border-radius: 40px; font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; margin-bottom: 24px;
   }
+  .phase-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--rose); flex-shrink: 0; }
+  .phase-badge.p2 { background: var(--purple); }
+  .phase-badge.p2 .dot { background: #BB8575; }
+  .phase-badge.p3 { background: var(--rose); color: var(--black); }
+  .phase-badge.p3 .dot { background: var(--black); }
 
-  /* ── Ambient glow ── */
-  .glow-orb {
-    position: fixed;
-    border-radius: 50%;
-    filter: blur(120px);
-    pointer-events: none;
-    z-index: 0;
+  /* SYSTEM CARDS */
+  .sys-card {
+    border-radius: 18px; overflow: hidden;
+    border: 1px solid var(--border); margin-bottom: 28px;
   }
-  .glow-orb.top { width: 600px; height: 600px; top: -200px; right: -100px; background: rgba(101,58,146,0.12); }
-  .glow-orb.mid { width: 500px; height: 500px; top: 50%; left: -150px; background: rgba(187,133,117,0.06); }
-  .glow-orb.bot { width: 700px; height: 700px; bottom: -300px; right: -200px; background: rgba(101,58,146,0.08); }
+  .sys-card-head {
+    padding: 28px 36px; display: flex; justify-content: space-between; align-items: flex-start; gap: 24px;
+  }
+  .sys-card-head.dark { background: var(--black); }
+  .sys-card-head.purple { background: var(--purple); }
+  .sys-head-label { font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgba(247,245,242,0.5); margin-bottom: 8px; }
+  .sys-head-title { font-size: 26px; font-weight: 900; color: #fff; letter-spacing: -.02em; line-height: 1.1; }
+  .sys-head-tag {
+    flex-shrink: 0; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--rose); background: rgba(187,133,117,0.15); border: 1px solid rgba(187,133,117,0.3);
+    padding: 7px 14px; border-radius: 30px; white-space: nowrap; margin-top: 4px;
+  }
+  .sys-head-tag.light { color: rgba(247,245,242,0.7); background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); }
+  .sys-card-body { background: #fff; padding: 32px 36px; }
+  .sys-desc { font-size: 15px; color: rgba(8,12,20,0.72); line-height: 1.65; margin-bottom: 24px; }
+  .sys-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 24px; }
+  .sys-cell { background: rgba(8,12,20,0.03); border-radius: 10px; padding: 16px 18px; }
+  .sys-cell-label { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(8,12,20,0.35); margin-bottom: 7px; }
+  .sys-cell-text { font-size: 13px; color: rgba(8,12,20,0.7); line-height: 1.5; }
+  .sys-items { display: flex; flex-direction: column; gap: 10px; margin-bottom: 22px; }
+  .sys-item { display: flex; gap: 12px; align-items: flex-start; }
+  .sys-dot { width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+  .sys-dot.rose { background: var(--rose); }
+  .sys-dot.purple { background: var(--purple); }
+  .sys-dot svg { width: 10px; height: 10px; }
+  .sys-item-text { font-size: 14px; color: rgba(8,12,20,0.72); line-height: 1.5; }
+  .sys-item-text strong { color: var(--black); font-weight: 700; }
+  .sys-fine { font-size: 12px; color: rgba(8,12,20,0.4); border-top: 1px solid rgba(8,12,20,0.07); padding-top: 16px; line-height: 1.55; }
 
-  /* ── Layout ── */
-  .container {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 0 32px;
-    position: relative;
-    z-index: 1;
-  }
+  /* IMPORTANT NOTE */
+  .note { border: 1px solid rgba(101,58,146,0.2); background: rgba(101,58,146,0.04); border-radius: 10px; padding: 18px 22px; margin: 20px 0; }
+  .note-label { font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--purple); margin-bottom: 8px; }
+  .note-text { font-size: 14px; color: rgba(8,12,20,0.7); line-height: 1.55; }
 
-  /* ── Navigation ── */
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    padding: 20px 0;
-    background: rgba(8,8,12,0.8);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-  }
-  nav .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .logo-mark {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .logo-text {
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--text-primary);
-  }
-  .nav-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    font-weight: 500;
-  }
+  /* CALLOUT */
+  .callout { background: var(--black); border-radius: 16px; padding: 32px 36px; margin: 32px 0; }
+  .callout-label { font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--rose); margin-bottom: 14px; }
+  .callout p { font-size: 15px; color: rgba(247,245,242,0.72); line-height: 1.6; margin-bottom: 10px; }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout p strong { color: #fff; }
 
-  /* ── Hero ── */
-  .hero {
-    padding: 180px 0 100px;
-    position: relative;
-  }
-  .hero-eyebrow {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--purple-mid);
-    margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .hero-eyebrow::before {
-    content: '';
-    width: 32px;
-    height: 1px;
-    background: var(--purple-deep);
-  }
-  .hero h1 {
-    font-size: clamp(2.4rem, 5vw, 3.6rem);
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-    margin-bottom: 24px;
-    max-width: 700px;
-  }
-  .hero h1 span {
-    background: linear-gradient(135deg, var(--purple-deep), var(--orange-accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .hero-sub {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    max-width: 560px;
-    line-height: 1.7;
-  }
+  /* WARM BOX */
+  .warm-box { background: rgba(187,133,117,0.08); border-left: 3px solid var(--rose); border-radius: 0 12px 12px 0; padding: 22px 28px; margin: 24px 0; }
+  .warm-title { font-size: 14px; font-weight: 700; color: var(--black); margin-bottom: 8px; }
+  .warm-text { font-size: 14px; color: rgba(8,12,20,0.7); line-height: 1.6; }
 
-  /* ── Divider ── */
-  .section-divider {
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--border-accent), transparent);
-    margin: 80px 0;
-  }
+  /* PROGRAM CARDS */
+  .prog-card { border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin-bottom: 20px; }
+  .prog-head { padding: 22px 28px; display: flex; justify-content: space-between; align-items: center; }
+  .prog-head.dark { background: var(--black); }
+  .prog-head.purple { background: var(--purple); }
+  .prog-head.mid { background: #1a2030; }
+  .prog-head-left { display: flex; flex-direction: column; }
+  .prog-num { font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgba(247,245,242,0.45); margin-bottom: 6px; }
+  .prog-name { font-size: 20px; font-weight: 800; color: #fff; letter-spacing: -.02em; }
+  .prog-price-block { text-align: right; }
+  .prog-price { font-size: 24px; font-weight: 900; color: #fff; letter-spacing: -.03em; }
+  .prog-price-sub { font-size: 11px; color: rgba(247,245,242,0.4); margin-top: 3px; }
+  .prog-body { background: #fff; padding: 24px 28px; }
+  .prog-desc { font-size: 14px; color: rgba(8,12,20,0.7); line-height: 1.6; margin-bottom: 16px; }
+  .prog-checks { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+  .prog-check { font-size: 13px; color: rgba(8,12,20,0.7); display: flex; gap: 8px; align-items: flex-start; }
+  .prog-check-icon { color: var(--purple); font-weight: 700; font-size: 13px; flex-shrink: 0; }
+  .prog-fine { font-size: 12px; color: rgba(8,12,20,0.4); border-top: 1px solid rgba(8,12,20,0.07); padding-top: 12px; line-height: 1.5; }
 
-  /* ── Phase sections ── */
-  .phase {
-    padding: 40px 0 60px;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeUp 0.6s ease forwards;
-  }
-  .phase:nth-child(2) { animation-delay: 0.1s; }
-  .phase:nth-child(3) { animation-delay: 0.2s; }
-  .phase:nth-child(4) { animation-delay: 0.3s; }
+  /* ACTION GRID */
+  .action-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 24px 0 36px; }
+  .action-cell { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 20px 18px; }
+  .action-label { font-size: 12px; font-weight: 700; color: var(--black); margin-bottom: 7px; }
+  .action-text { font-size: 12px; color: rgba(8,12,20,0.6); line-height: 1.5; }
 
-  @keyframes fadeUp {
-    to { opacity: 1; transform: translateY(0); }
-  }
+  /* BIG PICTURE */
+  .big { background: linear-gradient(135deg, var(--purple), #3d2260); border-radius: 20px; padding: 52px 56px; margin-bottom: 40px; }
+  .big-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: rgba(247,245,242,0.45); margin-bottom: 16px; }
+  .big-title { font-size: 38px; font-weight: 900; color: #fff; letter-spacing: -.03em; margin-bottom: 36px; line-height: 1.1; }
+  .big-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .big-cell { background: rgba(255,255,255,0.07); border-radius: 10px; padding: 18px 20px; }
+  .big-cell-label { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(247,245,242,0.4); margin-bottom: 7px; }
+  .big-cell-text { font-size: 14px; color: rgba(247,245,242,0.82); line-height: 1.5; }
 
-  .phase-header {
-    display: flex;
-    align-items: flex-start;
-    gap: 24px;
-    margin-bottom: 40px;
-  }
-  .phase-number {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--purple-mid);
-    padding: 8px 14px;
-    border: 1px solid var(--border-accent);
-    border-radius: 6px;
-    white-space: nowrap;
-    flex-shrink: 0;
-    background: var(--purple-glow);
-  }
-  .phase-title {
-    font-size: 1.6rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    line-height: 1.3;
-  }
-  .phase-subtitle {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    margin-top: 4px;
-  }
+  /* DISCLAIMER */
+  .disclaimer { background: rgba(8,12,20,0.04); border-radius: 12px; padding: 28px 32px; margin: 40px 0; border-left: 3px solid rgba(8,12,20,0.1); }
+  .disclaimer-label { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(8,12,20,0.35); margin-bottom: 12px; }
+  .disclaimer p { font-size: 12px; color: rgba(8,12,20,0.5); line-height: 1.65; margin-bottom: 8px; }
+  .disclaimer p:last-child { margin-bottom: 0; }
 
-  /* ── Content blocks ── */
-  .content-block {
-    margin-bottom: 36px;
-  }
-  .content-block h3 {
-    font-size: 1.05rem;
-    font-weight: 600;
-    margin-bottom: 12px;
-    color: var(--text-primary);
-  }
-  .content-block p {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.75;
-  }
+  /* FOOTER */
+  .doc-footer { background: var(--black); padding: 36px 64px; display: flex; justify-content: space-between; align-items: center; }
+  .doc-footer-brand { font-size: 13px; font-weight: 700; letter-spacing: .06em; color: rgba(247,245,242,0.5); }
+  .doc-footer-contact { font-size: 12px; color: rgba(247,245,242,0.3); letter-spacing: .04em; }
 
-  /* ── Cards ── */
-  .card-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-top: 24px;
-  }
-  @media (max-width: 640px) {
-    .card-grid { grid-template-columns: 1fr; }
-  }
-  .card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 28px;
-    position: relative;
-    overflow: hidden;
-    transition: border-color 0.3s ease, background 0.3s ease;
-  }
-  .card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--purple-deep), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  .card:hover {
-    border-color: var(--border-accent);
-    background: var(--bg-card-hover);
-  }
-  .card:hover::before { opacity: 1; }
-
-  .card-label {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--purple-mid);
-    margin-bottom: 14px;
-  }
-  .card h4 {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  .card p {
-    color: var(--text-secondary);
-    font-size: 0.88rem;
-    line-height: 1.7;
-  }
-
-  /* ── Feature list ── */
-  .feature-list {
-    list-style: none;
-    margin-top: 16px;
-  }
-  .feature-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 10px 0;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    line-height: 1.6;
-    border-bottom: 1px solid var(--border);
-  }
-  .feature-list li:last-child { border-bottom: none; }
-  .feature-list li::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    background: var(--purple-deep);
-    border-radius: 50%;
-    flex-shrink: 0;
-    margin-top: 8px;
-  }
-
-  /* ── Stat row ── */
-  .stat-row {
-    display: flex;
-    gap: 16px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-  }
-  .stat-item {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 20px 24px;
-    flex: 1;
-    min-width: 140px;
-    text-align: center;
-  }
-  .stat-value {
-    font-size: 1.5rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--purple-deep), var(--orange-accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .stat-label {
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-top: 4px;
-  }
-
-  /* ── Callout box ── */
-  .callout {
-    background: var(--gradient-card);
-    border: 1px solid var(--border-accent);
-    border-radius: 12px;
-    padding: 28px 32px;
-    margin: 32px 0;
-    position: relative;
-  }
-  .callout::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 12px;
-    bottom: 12px;
-    width: 3px;
-    background: linear-gradient(180deg, var(--purple-deep), var(--orange-accent));
-    border-radius: 2px;
-  }
-  .callout-title {
-    font-size: 0.92rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: var(--text-primary);
-  }
-  .callout p {
-    color: var(--text-secondary);
-    font-size: 0.88rem;
-    line-height: 1.7;
-  }
-
-  /* ── Full-width card ── */
-  .card-full {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 36px;
-    margin-top: 24px;
-  }
-  .card-full h4 {
-    font-size: 1.05rem;
-    font-weight: 600;
-    margin-bottom: 16px;
-  }
-
-  /* ── Timeline ── */
-  .timeline {
-    position: relative;
-    padding-left: 32px;
-    margin-top: 24px;
-  }
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 6px;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background: linear-gradient(180deg, var(--purple-deep), var(--border));
-  }
-  .timeline-item {
-    position: relative;
-    margin-bottom: 28px;
-  }
-  .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -29px;
-    top: 6px;
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: var(--purple-deep);
-    border: 2px solid var(--bg-primary);
-  }
-  .timeline-item h5 {
-    font-size: 0.88rem;
-    font-weight: 600;
-    margin-bottom: 4px;
-    color: var(--text-primary);
-  }
-  .timeline-item p {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    line-height: 1.65;
-  }
-
-  /* ── Bottom summary ── */
-  .summary-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 12px;
-    margin-top: 24px;
-  }
-  .summary-item {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    font-size: 0.88rem;
-    color: var(--text-secondary);
-    line-height: 1.55;
-    transition: border-color 0.3s;
-  }
-  .summary-item:hover {
-    border-color: var(--border-accent);
-  }
-  .summary-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
-    background: var(--purple-glow);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 12px;
-    color: var(--purple-mid);
-  }
-
-  /* ── Footer ── */
-  .footer {
-    margin-top: 60px;
-    padding: 48px 0;
-    border-top: 1px solid var(--border);
-  }
-  .footer-brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
-  }
-  .footer-team {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    margin-bottom: 32px;
-  }
-  .disclaimer {
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    line-height: 1.7;
-    max-width: 800px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-  }
-  .footer-legal {
-    font-size: 0.68rem;
-    color: var(--text-muted);
-    margin-top: 16px;
-  }
-
-  /* ── Budget tag ── */
-  .budget-tag {
-    display: inline-block;
-    background: var(--purple-glow);
-    border: 1px solid var(--border-accent);
-    border-radius: 6px;
-    padding: 4px 12px;
-    font-family: 'Space Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--purple-mid);
-    margin-top: 8px;
-  }
-
-  /* ── Responsive ── */
-  @media (max-width: 768px) {
-    .container { padding: 0 20px; }
-    .hero { padding: 140px 0 60px; }
-    .phase-header { flex-direction: column; gap: 12px; }
-    .stat-row { flex-direction: column; }
-    nav { padding: 16px 0; }
-  }
+  /* CHECK ICON */
+  .chk { display: inline-block; width: 10px; height: 10px; }
 </style>
 </head>
 <body>
 
-<div class="glow-orb top"></div>
-<div class="glow-orb mid"></div>
-<div class="glow-orb bot"></div>
-
-<!-- NAV -->
-<nav>
-  <div class="container">
-    <div class="logo-mark">
-      <span class="logo-text">ScaleLogix AI</span>
-    </div>
-    <span class="nav-label">Partner Onboarding Guide</span>
+<!-- COVER -->
+<section class="cover">
+  <div class="cover-top">
+    <div class="cover-logo"><img src="data:image/png;base64,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" alt="ScaleLogix AI"></div>
+    <div class="cover-tag">Partner Onboarding Guide</div>
   </div>
-</nav>
+  <div class="cover-body">
+    <div class="cover-eyebrow">ScaleLogix AI &nbsp;·&nbsp; Partner Series</div>
+    <h1 class="cover-h1">Your First<br>30 – 60 – 90 Days<br><em>Live With ScaleLogix AI.</em></h1>
+    <p class="cover-sub">A clear, honest roadmap for your first 90 days — how your systems activate, what to expect at each stage, and how to build early momentum the right way.</p>
+  </div>
+  <div class="cover-footer">
+    <div class="cover-footer-brand">ScaleLogix AI</div>
+    <div class="cover-footer-conf">Confidential &nbsp;·&nbsp; ScaleMethods Partners LLC &nbsp;·&nbsp; Authorized Distribution Only</div>
+  </div>
+</section>
 
-<div class="container">
+<!-- WELCOME -->
+<div class="page">
+  <div class="eyebrow">Welcome</div>
+  <h2 class="section-title">You're officially <em>live.</em></h2>
+  <div class="rule"></div>
+  <p class="lead">This guide walks you through what happens over your first 90 days as a ScaleLogix partner — how your infrastructure activates, what your acquisition options look like, and how to build sustainable deal flow. Read it carefully. The partners who move fastest are the ones who understand the system.</p>
+  <p class="body-text">What you've built with ScaleLogix is not a plug-and-play software tool. It is a fully deployed operating infrastructure for a professional AI-services business — including your brand, your CRM environment, your outreach systems, and your fulfillment workflows. This guide covers what comes next.</p>
+  <div class="note">
+    <div class="note-label">Important Context</div>
+    <div class="note-text">ScaleLogix provides infrastructure, systems, and operational support — not guaranteed clients, leads, or revenue. Success depends on your engagement, your market, and your execution. We guide and support you at every stage, but this is your business. We are your operational partner, not your sales team.</div>
+  </div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-eyebrow">Partner Launch Protocol</div>
-    <h1>Your First <span>30 / 60 / 90 Days</span> Live</h1>
-    <p class="hero-sub">A clear operational roadmap for what to expect once your agency is live, how ICAS begins working immediately, and how to build early momentum through strategic acquisition.</p>
-  </section>
-
-  <div class="section-divider"></div>
+  <hr class="div">
 
   <!-- PHASE 1 -->
-  <section class="phase">
-    <div class="phase-header">
-      <span class="phase-number">Days 0–30</span>
+  <div class="phase-badge"><div class="dot"></div> Phase One</div>
+  <div class="eyebrow">Days 0 – 30</div>
+  <h2 class="section-title">Launch &amp; <em>System Activation.</em></h2>
+  <div class="rule"></div>
+  <p class="lead">Your infrastructure is built. Now the two core acquisition systems begin to activate. This first phase is about initialization — establishing the foundation that makes Month 2 and beyond perform. Volume is intentionally conservative at this stage. That is by design.</p>
+
+  <!-- ICAS CARD -->
+  <div class="sys-card">
+    <div class="sys-card-head dark">
       <div>
-        <div class="phase-title">Launch, Signal Activation & Early Acquisition</div>
-        <div class="phase-subtitle">Systems activate. Signals begin. Foundation is set.</div>
+        <div class="sys-head-label">Core System 01 &nbsp;·&nbsp; Shared Infrastructure</div>
+        <div class="sys-head-title">Intelligent Client<br>Acquisition System (ICAS)</div>
       </div>
+      <div class="sys-head-tag">Active from Day 1</div>
     </div>
+    <div class="sys-card-body">
+      <p class="sys-desc">ICAS is ScaleLogix's proprietary AI-powered outreach and client acquisition engine — a shared infrastructure designed to support new agency partners during the critical early launch phase. While your dedicated systems come online, ICAS introduces qualified opportunities sourced from ScaleLogix's own outbound channels directly into your pipeline.</p>
+      <p class="sys-desc" style="margin-bottom:24px;">ICAS represents the operational bridge between your launch date and full independence. It is a launch accelerator, not a long-term primary channel — and it is designed specifically to prevent the quiet first 30–45 days that agencies without this infrastructure typically experience.</p>
 
-    <div class="content-block">
-      <h3>Once You're Live</h3>
-      <p>ICAS activates immediately upon launch. Your CRM begins receiving inbound and outbound data signals within the first week. Cold outreach sequences, including in-house LinkedIn, email, and direct outreach, begin routing to your agency. Responses and engagement are tagged and funneled directly into your pipeline.</p>
-    </div>
-
-    <div class="callout">
-      <div class="callout-title">Early Volume Is Conservative by Design</div>
-      <p>Cold outreach starts intentionally light. It is algorithmically designed to round-robin based on niche and tier. This phase focuses on warming domains, profiles, and audiences. Expect signals and conversations, not heavy volume yet.</p>
-    </div>
-
-    <div class="content-block">
-      <h3>Why We Recommend Starting Acquisition in Month 1</h3>
-      <p>While ICAS runs continuously in the background, we strongly recommend activating at least one acquisition channel in Month 1. This is not required, but in practice, clients who begin acquisition early consistently outperform those who wait.</p>
-    </div>
-
-    <div class="stat-row">
-      <div class="stat-item">
-        <div class="stat-value">Faster</div>
-        <div class="stat-label">Deal Flow</div>
+      <div style="font-size:13px; font-weight:700; color:var(--black); margin-bottom:12px; letter-spacing:-.01em;">How ICAS Works</div>
+      <div class="sys-items">
+        <div class="sys-item">
+          <div class="sys-dot rose"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,2.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="sys-item-text"><strong>Shared outbound channels generate early deal flow.</strong> Active source channels may include LinkedIn outreach, cold email campaigns, Facebook lead generation, marketplace platforms such as Upwork, and additional channels as they are developed and tested. Channel availability varies based on market conditions and operational capacity.</div>
+        </div>
+        <div class="sys-item">
+          <div class="sys-dot rose"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,2.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="sys-item-text"><strong>ScaleLogix's internal team handles initial qualification.</strong> Inbound interest generated through ICAS channels is processed by ScaleLogix's B2B operations team, which conducts initial qualification conversations where applicable. Prospects that meet criteria are then routed to agency partners based on niche alignment and availability.</div>
+        </div>
+        <div class="sys-item">
+          <div class="sys-dot rose"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,2.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="sys-item-text"><strong>Early outreach starts light and builds over time.</strong> ICAS outreach is intentionally conservative during system warm-up. Aggressive early output degrades deliverability and platform standing — patience in this phase produces compounding returns.</div>
+        </div>
+        <div class="sys-item">
+          <div class="sys-dot rose"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,2.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="sys-item-text"><strong>Supporting resources are included.</strong> ICAS comes with sales frameworks and discovery guidance, proposal and pricing references, and diagnostic tools used in prospect conversations — resources designed to help you convert opportunities effectively from the start.</div>
+        </div>
       </div>
-      <div class="stat-item">
-        <div class="stat-value">Shorter</div>
-        <div class="stat-label">Ramp Period</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-value">Clearer</div>
-        <div class="stat-label">Market Feedback</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-value">Avoid</div>
-        <div class="stat-label">Quiet First 45 Days</div>
-      </div>
+
+      <div class="sys-fine">ICAS is a launch accelerator. It is not designed to be your primary long-term acquisition channel. As your agency scales, you are expected to operate and invest in your own marketing and outreach infrastructure — which is exactly what the APEX Lead Engine is built to power.</div>
     </div>
+  </div>
 
-    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 20px;">Starting early allows systems to warm while real opportunities begin entering your pipeline.</p>
-  </section>
+  <!-- APEX CARD -->
+  <div class="sys-card">
+    <div class="sys-card-head purple">
+      <div>
+        <div class="sys-head-label">Core System 02 &nbsp;·&nbsp; Your Dedicated Infrastructure</div>
+        <div class="sys-head-title">APEX Lead Engine</div>
+      </div>
+      <div class="sys-head-tag light">Activates Month 1–2</div>
+    </div>
+    <div class="sys-card-body">
+      <p class="sys-desc">The APEX Lead Engine is your agency's own dedicated client acquisition infrastructure — built and operated entirely within your CRM environment. Where ICAS draws from ScaleLogix's shared channels, APEX generates opportunities specifically for your business. It is the foundation of your independent, long-term acquisition strategy.</p>
 
-  <div class="section-divider"></div>
+      <div class="sys-grid">
+        <div class="sys-cell">
+          <div class="sys-cell-label">ICAS vs. APEX</div>
+          <div class="sys-cell-text">ICAS distributes from shared ScaleLogix channels. APEX runs inside your own CRM and generates opportunities exclusively for your agency. They are complementary — not competing.</div>
+        </div>
+        <div class="sys-cell">
+          <div class="sys-cell-label">What APEX Does</div>
+          <div class="sys-cell-text">Targeted outbound sourcing, automated email sequences, AI-assisted response handling, and CRM-based follow-up workflows — all working to convert engagement into booked discovery calls for your team.</div>
+        </div>
+      </div>
+
+      <div style="font-size:13px; font-weight:700; color:var(--black); margin-bottom:12px; letter-spacing:-.01em;">What's Included in APEX</div>
+      <div class="sys-items">
+        <div class="sys-item">
+          <div class="sys-dot purple"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,2.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="sys-item-text"><strong>Targeted outbound lead sourcing.</strong> Lists are researched and curated based on your niche, positioning, and ideal client profile.</div>
+        </div>
+        <div class="sys-item">
+          <div class="sys-dot purple"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,2.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="sys-item-text"><strong>Automated email outreach sequences.</strong> Multi-step, personalized outreach campaigns deployed from within your infrastructure — running continuously in the background.</div>
+        </div>
+        <div class="sys-item">
+          <div class="sys-dot purple"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,2.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="sys-item-text"><strong>AI-assisted response handling.</strong> As prospects engage with outreach, the system responds intelligently, nurtures conversations, and moves interested leads toward a booked call — without requiring manual input on every exchange.</div>
+        </div>
+        <div class="sys-item">
+          <div class="sys-dot purple"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,2.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="sys-item-text"><strong>CRM-based follow-up workflows.</strong> Structured, automated follow-up sequences ensure no opportunity falls through the cracks — from initial engagement to booked discovery call.</div>
+        </div>
+      </div>
+
+      <div class="sys-fine">APEX is actively enhanced on an ongoing basis. Upcoming developments include expanded outbound channels, automated prospect qualification, and integrated calling workflows for follow-up on active leads. As your agency scales, most partners layer additional channels — paid acquisition, LinkedIn, partnerships, and niche-specific outbound — on top of the APEX foundation.</div>
+    </div>
+  </div>
+
+  <div class="warm-box">
+    <div class="warm-title">Why Activating an Acquisition Channel in Month 1 Matters</div>
+    <div class="warm-text">ICAS runs in the background from Day 1. But partners who activate at least one additional acquisition channel — LinkedIn Outreach or a Lead Acquisition package — in Month 1 consistently see faster deal flow, shorter ramp periods, and clearer market feedback. This is not required. But it significantly closes the window of a quiet early phase. The optional programs described in Phase Two are available to activate at any time.</div>
+  </div>
+
+  <hr class="div">
 
   <!-- PHASE 2 -->
-  <section class="phase">
-    <div class="phase-header">
-      <span class="phase-number">Month 1–2</span>
-      <div>
-        <div class="phase-title">Acquisition Options & Ramp-Up</div>
-        <div class="phase-subtitle">Choose your channels. Build momentum.</div>
+  <div class="phase-badge p2"><div class="dot"></div> Phase Two</div>
+  <div class="eyebrow">Month 1 – 2</div>
+  <h2 class="section-title">APEX Goes Live &amp;<br><em>Acquisition Ramp-Up.</em></h2>
+  <div class="rule"></div>
+  <p class="lead">APEX transitions from configuration to active operation within your CRM. Alongside it, optional acquisition programs are available to activate — giving you multiple channels generating pipeline simultaneously.</p>
+
+  <!-- LinkedIn -->
+  <div class="prog-card">
+    <div class="prog-head dark">
+      <div class="prog-head-left">
+        <div class="prog-num">Optional Program 01</div>
+        <div class="prog-name">LinkedIn Outreach</div>
       </div>
-    </div>
 
-    <div class="content-block">
-      <p>We'll help you choose the most appropriate starting option based on your niche and goals. Most partners begin with one or both of the following channels.</p>
     </div>
-
-    <div class="card-grid">
-      <div class="card">
-        <div class="card-label">Channel 01</div>
-        <h4>LinkedIn Campaigns</h4>
-        <ul class="feature-list">
-          <li>Run using your own profile(s) or a network of profiles under your brand</li>
-          <li>Typical ramp once live: ~6–12 qualified conversations per profile per month</li>
-          <li>Scalable with additional profiles under your brand</li>
-          <li>Monthly fee applies per profile if expanded</li>
-        </ul>
-        <div class="callout" style="margin-top: 20px; margin-bottom: 0;">
-          <p>If you plan to use LinkedIn, let us know early so setup can begin before or immediately after launch.</p>
+    <div class="prog-body">
+      <p class="prog-desc">Professional LinkedIn outreach deployed and fully managed by ScaleLogix. You choose how it is positioned and which approach fits your business — we handle all setup, sequencing, audience targeting, and ongoing management. Three configurations are available depending on your goals and preferences.</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:18px;">
+        <div class="sys-cell">
+          <div class="sys-cell-label">Your Own Profile</div>
+          <div class="sys-cell-text">Campaigns run through your personal or company LinkedIn profile. Builds your brand presence while driving consistent prospecting volume. All messaging and sequencing managed by ScaleLogix.</div>
+        </div>
+        <div class="sys-cell">
+          <div class="sys-cell-label">Dedicated Outreach Profiles</div>
+          <div class="sys-cell-text">ScaleLogix deploys and manages dedicated outreach profiles on your behalf — fully managed, completely separate from your personal brand. Capacity scales based on your program scope. Ideal if you prefer separation or want outreach running independently of your personal presence.</div>
+        </div>
+        <div class="sys-cell">
+          <div class="sys-cell-label">Both Combined</div>
+          <div class="sys-cell-text">Run your own profile alongside dedicated outreach profiles for maximum reach and channel separation. This is the highest-output LinkedIn configuration and is available at a combined rate.</div>
         </div>
       </div>
-      <div class="card">
-        <div class="card-label">Channel 02</div>
-        <h4>Lead Packages</h4>
-        <ul class="feature-list">
-          <li>Delivered via ScaleLogix-managed funnels</li>
-          <li>Pricing is per lead or per booked meeting</li>
-          <li>Costs fluctuate based on niche, market competition, and qualification criteria</li>
-          <li>Setup typically takes 10–15 business days (creative alignment, funnel configuration, CRM routing)</li>
-        </ul>
-        <div class="budget-tag">Typical starting budget: $700–$2,500 / Month 1</div>
-      </div>
+      <div class="prog-fine">Includes: campaign setup · audience targeting · message sequencing · monthly reporting &nbsp;·&nbsp; Month-to-month. 2 weeks written notice to cancel. Contact your ScaleLogix account team to activate or adjust your configuration.</div>
     </div>
-  </section>
+  </div>
 
-  <div class="section-divider"></div>
+  <!-- Lead Acquisition -->
+  <div class="prog-card">
+    <div class="prog-head purple">
+      <div class="prog-head-left">
+        <div class="prog-num">Optional Program 02</div>
+        <div class="prog-name">Lead Acquisition</div>
+      </div>
+
+    </div>
+    <div class="prog-body">
+      <p class="prog-desc">Pre-qualified leads delivered directly to your pipeline via Facebook's targeting infrastructure. Every lead has expressed genuine interest. Volume and delivery cadence vary based on niche, market competition, and your qualification criteria — these are strategic variables you control.</p>
+      <div class="prog-checks">
+        <div class="prog-check"><span class="prog-check-icon">✓</span> Interested, pre-qualified leads</div>
+        <div class="prog-check"><span class="prog-check-icon">✓</span> Facebook-based acquisition</div>
+        <div class="prog-check"><span class="prog-check-icon">✓</span> Delivered directly to your team</div>
+        <div class="prog-check"><span class="prog-check-icon">✓</span> Volume adjustable per engagement</div>
+        <div class="prog-check"><span class="prog-check-icon">✓</span> Custom package sizing available</div>
+        <div class="prog-check"><span class="prog-check-icon">✓</span> Typically 10–15 business days to launch</div>
+      </div>
+      <div class="note" style="margin:0 0 14px;"><div class="note-label">On Qualification Trade-offs</div><div class="note-text">Stricter qualification criteria may reduce overall volume. Niche competition and platform conditions also affect delivery cadence month to month. These trade-offs are strategic decisions you control — not performance guarantees from ScaleLogix.</div></div>
+      <div class="prog-fine">Launch setup includes: creative alignment · funnel configuration · CRM routing. Not a subscription — each order is independent. Contact your ScaleLogix account team to place or adjust an order.</div>
+    </div>
+  </div>
+
+  <hr class="div">
 
   <!-- PHASE 3 -->
-  <section class="phase">
-    <div class="phase-header">
-      <span class="phase-number">Days 60–90</span>
-      <div>
-        <div class="phase-title">Optimization & Scaling</div>
-        <div class="phase-subtitle">Refine. Scale. Expand.</div>
-      </div>
+  <div class="phase-badge p3"><div class="dot"></div> Phase Three</div>
+  <div class="eyebrow">Days 60 – 90</div>
+  <h2 class="section-title">Optimization,<br>Scaling &amp; <em>Growth.</em></h2>
+  <div class="rule"></div>
+  <p class="lead">By this stage your systems are fully warmed. APEX is generating consistent pipeline activity, messaging and targeting have been refined from live data, and your acquisition channels are running with stability. This is where you shift from setup to scale.</p>
+
+  <div class="sys-items" style="margin-bottom:32px;">
+    <div class="sys-item">
+      <div class="sys-dot rose"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,2.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="sys-item-text"><strong>APEX Lead Engine is fully warmed and operational.</strong> Deliverability, targeting precision, and AI response quality improve meaningfully over the first 60 days — what runs in Week 8 outperforms Week 1 considerably.</div>
     </div>
-
-    <div class="content-block">
-      <p>By this stage, outreach and acquisition systems are fully warmed. Messaging and targeting have been refined through live data. We begin optimizing across three core dimensions.</p>
+    <div class="sys-item">
+      <div class="sys-dot rose"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,2.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="sys-item-text"><strong>Messaging and targeting are refined based on real data.</strong> We optimize based on what is actually working in your niche — not assumptions. This is an ongoing process, not a one-time configuration.</div>
     </div>
-
-    <div class="stat-row">
-      <div class="stat-item">
-        <div class="stat-value" style="font-size: 1.1rem;">Lead Quality</div>
-        <div class="stat-label">Precision Targeting</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-value" style="font-size: 1.1rem;">Booking Efficiency</div>
-        <div class="stat-label">Conversion Rate</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-value" style="font-size: 1.1rem;">Close Alignment</div>
-        <div class="stat-label">Revenue Focus</div>
-      </div>
+    <div class="sys-item">
+      <div class="sys-dot rose"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,2.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="sys-item-text"><strong>Optimization focuses on lead quality, booking efficiency, and close alignment.</strong> Volume matters — but qualified, closeable pipeline is the objective. We tune for both.</div>
     </div>
+  </div>
 
-    <div class="card-full">
-      <h4>Common Scaling Actions at This Stage</h4>
-      <div class="timeline">
-        <div class="timeline-item">
-          <h5>Increase Lead Volume</h5>
-          <p>Scale existing channels that are producing qualified conversations.</p>
-        </div>
-        <div class="timeline-item">
-          <h5>Add LinkedIn Profiles</h5>
-          <p>Expand outreach capacity under your brand with additional profiles.</p>
-        </div>
-        <div class="timeline-item">
-          <h5>Expand Acquisition Channels</h5>
-          <p>Diversify beyond initial channels based on performance data.</p>
-        </div>
-        <div class="timeline-item">
-          <h5>Explore Paid Advertising</h5>
-          <p>Run paid ads on your own ad accounts with strategic guidance.</p>
-        </div>
-        <div class="timeline-item">
-          <h5>Layer Additional Marketing Support</h5>
-          <p>Add content, social management, or creative campaigns as needed.</p>
-        </div>
-      </div>
+  <p style="font-size:14px; font-weight:700; color:var(--black); margin-bottom:14px;">Common partner actions at this stage:</p>
+  <div class="action-grid">
+    <div class="action-cell">
+      <div class="action-label">↑ Scale APEX</div>
+      <div class="action-text">Expand outbound volume, add prospect lists, and increase sequence capacity as your pipeline throughput grows.</div>
     </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <!-- ADDITIONAL SUPPORT -->
-  <section class="phase">
-    <div class="phase-header">
-      <span class="phase-number">Optional</span>
-      <div>
-        <div class="phase-title">Additional Marketing & Growth Support</div>
-        <div class="phase-subtitle">Available when and if you decide they make sense.</div>
-      </div>
+    <div class="action-cell">
+      <div class="action-label">+ More Channels</div>
+      <div class="action-text">Add LinkedIn profiles, increase lead packages, or layer in new acquisition sources as your capacity scales.</div>
     </div>
-
-    <div class="summary-grid">
-      <div class="summary-item">
-        <div class="summary-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
-        </div>
-        Social Media Management
-      </div>
-      <div class="summary-item">
-        <div class="summary-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-        </div>
-        Content Creation
-      </div>
-      <div class="summary-item">
-        <div class="summary-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-        </div>
-        Paid Advertising
-      </div>
-      <div class="summary-item">
-        <div class="summary-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        Brand Campaigns
-      </div>
+    <div class="action-cell">
+      <div class="action-label">→ Paid Ad Management</div>
+      <div class="action-text">Activate Program 03 when you are ready to scale aggressively through fully managed paid media campaigns.</div>
     </div>
-  </section>
+  </div>
 
-  <div class="section-divider"></div>
+  <!-- Ad Management -->
+  <div class="prog-card">
+    <div class="prog-head mid">
+      <div class="prog-head-left">
+        <div class="prog-num">Optional Program 03 &nbsp;·&nbsp; Available When You're Ready</div>
+        <div class="prog-name">Full-Service Ad Management</div>
+      </div>
+
+    </div>
+    <div class="prog-body">
+      <p class="prog-desc">A bespoke, fully managed paid advertising service. ScaleLogix builds a custom strategy around your business, handles all creative deployment and audience development, and owns end-to-end execution across platforms. Starts on Facebook and scales as your campaigns grow.</p>
+      <div class="prog-checks">
+        <div class="prog-check"><span class="prog-check-icon" style="color:var(--rose);">→</span> Consultation &amp; custom strategy build</div>
+        <div class="prog-check"><span class="prog-check-icon" style="color:var(--rose);">→</span> Ad creative &amp; audience deployment</div>
+        <div class="prog-check"><span class="prog-check-icon" style="color:var(--rose);">→</span> Budget pacing &amp; performance management</div>
+        <div class="prog-check"><span class="prog-check-icon" style="color:var(--rose);">→</span> Monthly performance reporting</div>
+      </div>
+      <div class="prog-fine">All advertising spend is client-funded and separate from ScaleLogix service fees. Platforms: Facebook (active) · Instagram · YouTube · Additional on request. Requires 30 days written notice to cancel. Contact your ScaleLogix account team to initiate.</div>
+    </div>
+  </div>
+
+  <hr class="div">
 
   <!-- BIG PICTURE -->
-  <section class="phase">
-    <div class="phase-header">
-      <span class="phase-number">Overview</span>
-      <div>
-        <div class="phase-title">The Big Picture</div>
+  <div class="big">
+    <div class="big-eyebrow">The Summary</div>
+    <div class="big-title">The Big Picture.</div>
+    <div class="big-grid">
+      <div class="big-cell">
+        <div class="big-cell-label">ICAS</div>
+        <div class="big-cell-text">ScaleLogix's shared acquisition infrastructure runs from Day 1 — introducing early deal flow while your dedicated systems come online.</div>
+      </div>
+      <div class="big-cell">
+        <div class="big-cell-label">APEX Lead Engine</div>
+        <div class="big-cell-text">Your dedicated, in-CRM acquisition system. Activates in Month 1–2 and becomes your primary independent outreach infrastructure as you scale.</div>
+      </div>
+      <div class="big-cell">
+        <div class="big-cell-label">Your Control</div>
+        <div class="big-cell-text">You control budget, program selection, and pacing. We advise, configure, and execute within the scope you choose.</div>
+      </div>
+      <div class="big-cell">
+        <div class="big-cell-label">Our Role</div>
+        <div class="big-cell-text">We guide you through each step and help you make decisions based on real data. We are your operational partner, not your revenue guarantee.</div>
+      </div>
+      <div class="big-cell">
+        <div class="big-cell-label">Optional Programs</div>
+        <div class="big-cell-text">LinkedIn Outreach, Lead Acquisition, and Ad Management are available via separate Order Form — activated on your timeline, as your business requires.</div>
+      </div>
+      <div class="big-cell">
+        <div class="big-cell-label">Long-Term Path</div>
+        <div class="big-cell-text">APEX is the foundation. Most agencies layer paid acquisition, partnerships, and channel-specific outbound on top of it as they scale beyond the first 90 days.</div>
       </div>
     </div>
+  </div>
 
-    <div class="summary-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
-      <div class="summary-item">
-        <div class="summary-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        </div>
-        ICAS runs continuously
-      </div>
-      <div class="summary-item">
-        <div class="summary-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        </div>
-        Early outreach builds signal & foundation
-      </div>
-      <div class="summary-item">
-        <div class="summary-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-        </div>
-        Month 1 acquisition accelerates momentum
-      </div>
-      <div class="summary-item">
-        <div class="summary-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
-        </div>
-        You control budget & pacing
-      </div>
-      <div class="summary-item">
-        <div class="summary-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-        </div>
-        We advise, support & execute within your scope
-      </div>
-    </div>
-
-    <div class="callout" style="margin-top: 32px;">
-      <p>We'll guide you through each step and help you make decisions based on real data, not assumptions.</p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-brand">
-      <span class="logo-text">ScaleLogix AI</span>
-    </div>
-    <div class="footer-team">The ScaleLogix Acquisition & Agency Growth Team</div>
-
-    <div class="disclaimer">
-      <strong style="color: var(--text-secondary);">Disclaimer</strong><br>
-      Timelines, volume ranges, and acquisition examples outlined above are illustrative and based on typical partner experiences. Actual results may vary depending on niche, market conditions, offer positioning, budget, sales execution, and external platform factors. ScaleLogix provides infrastructure, systems, and operational support on a best-efforts basis and does not guarantee specific outcomes.
-    </div>
-
-    <div class="footer-legal">&copy; 2025 ScaleMethods Partners LLC d/b/a ScaleLogix AI. All Rights Reserved.</div>
-  </footer>
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    <div class="disclaimer-label">Important Disclaimer</div>
+    <p>Timelines, system descriptions, and operational examples outlined in this guide are based on typical partner experiences and are provided for informational purposes only. Actual results will vary depending on niche, market conditions, offer positioning, audience, budget allocation, sales execution, and external platform and regulatory factors.</p>
+    <p>ScaleLogix provides infrastructure, systems, and operational support. ScaleLogix does not guarantee specific lead volume, conversion rates, appointment volume, revenue, business outcomes, or client acquisition results of any kind. All paid media spend, advertising budgets, list acquisition costs, and third-party software subscriptions are the sole responsibility of the Licensee.</p>
+    <p>Optional programs — including LinkedIn Outreach, Lead Acquisition, and Full-Service Ad Management — are available only pursuant to a separate, signed Order Form and are not included in the base infrastructure license. ICAS represents a best-efforts operational support service and does not guarantee the distribution of any specific lead volume. APEX Lead Engine functionality is included as part of the licensed infrastructure and is subject to system availability, configuration timelines, and Licensee cooperation as defined in the executed Infrastructure License &amp; Operations Agreement.</p>
+    <p>This document is for informational purposes only and does not constitute or modify any contractual obligations. All commercial terms are governed exclusively by the executed Infrastructure License &amp; Operations Agreement between the parties.</p>
+  </div>
 
 </div>
+
+<!-- FOOTER -->
+<footer class="doc-footer">
+  <div class="doc-footer-brand">ScaleLogix AI</div>
+  <div class="doc-footer-contact">Confidential &nbsp;·&nbsp; ScaleMethods Partners LLC &nbsp;·&nbsp; acquisitions@scalemethods.com</div>
+</footer>
 
 </body>
 </html>
