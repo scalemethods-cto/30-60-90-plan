@@ -1,483 +1,765 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your First 30–60–90 Days | ScaleLogix AI</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --black: #080c14;
-    --purple: #653a92;
-    --rose: #BB8575;
-    --cream: #F7F5F2;
-    --border: rgba(8,12,20,0.09);
-  }
-  html { font-size: 16px; }
-  body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--black); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScaleLogix AI — Go-Live Confirmation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  /* COVER */
-  .cover {
-    background: var(--black); min-height: 100vh;
-    display: flex; flex-direction: column; justify-content: space-between;
-    padding: 60px 64px 52px; position: relative; overflow: hidden;
-  }
-  .cover::before {
-    content: ''; position: absolute; top: -120px; right: -120px;
-    width: 560px; height: 560px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(101,58,146,0.18) 0%, transparent 70%);
-  }
-  .cover::after {
-    content: ''; position: absolute; bottom: -80px; left: -80px;
-    width: 400px; height: 400px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(187,133,117,0.10) 0%, transparent 70%);
-  }
-  .cover-top { display: flex; justify-content: space-between; align-items: flex-start; }
-  .cover-logo img { height: 52px; width: auto; }
-  .cover-tag {
-    font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
-    color: var(--rose); background: rgba(187,133,117,0.1);
-    border: 1px solid rgba(187,133,117,0.3); padding: 6px 14px; border-radius: 40px;
-  }
-  .cover-body { padding: 80px 0 40px; position: relative; z-index: 1; }
-  .cover-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--rose); margin-bottom: 24px; }
-  .cover-h1 { font-size: clamp(52px, 7vw, 84px); font-weight: 900; color: #fff; line-height: .98; letter-spacing: -.04em; margin-bottom: 32px; }
-  .cover-h1 em { font-style: normal; background: linear-gradient(135deg, var(--rose), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-  .cover-sub { font-size: 17px; font-weight: 400; color: rgba(247,245,242,0.7); max-width: 480px; line-height: 1.6; }
-  .cover-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; position: relative; z-index: 1; }
-  .cover-footer-brand { font-size: 13px; font-weight: 700; letter-spacing: .06em; color: rgba(247,245,242,0.5); }
-  .cover-footer-conf { font-size: 11px; color: rgba(247,245,242,0.3); letter-spacing: .06em; }
+    :root {
+      --purple:     #7B6CF6;
+      --purple-dim: #5B4ED6;
+      --purple-glow:rgba(123,108,246,0.18);
+      --copper:     #C9896A;
+      --white:      #FFFFFF;
+      --off-white:  #F0EEF8;
+      --muted:      rgba(255,255,255,0.45);
+      --subtle:     rgba(255,255,255,0.12);
+      --bg:         #07070F;
+      --surface:    rgba(255,255,255,0.04);
+      --border:     rgba(255,255,255,0.08);
+      --border-hi:  rgba(123,108,246,0.5);
+      --green:      #4ADE80;
+    }
 
-  /* PAGE */
-  .page { max-width: 860px; margin: 0 auto; padding: 72px 64px; }
+    html, body {
+      min-height: 100vh;
+      background: var(--bg);
+      font-family: 'Inter', sans-serif;
+      color: var(--white);
+      overflow-x: hidden;
+    }
 
-  /* TYPOGRAPHY */
-  .eyebrow { font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--rose); margin-bottom: 10px; }
-  .section-title { font-size: clamp(36px, 5vw, 52px); font-weight: 900; color: var(--black); letter-spacing: -.03em; line-height: 1.05; margin-bottom: 6px; }
-  .section-title em { font-style: normal; color: var(--rose); }
-  .rule { width: 48px; height: 3px; background: linear-gradient(90deg, var(--rose), var(--purple)); border-radius: 2px; margin: 18px 0 32px; }
-  .lead { font-size: 17px; color: rgba(8,12,20,0.7); line-height: 1.65; margin-bottom: 36px; max-width: 660px; }
-  .body-text { font-size: 15px; color: rgba(8,12,20,0.72); line-height: 1.65; margin-bottom: 20px; }
-  hr.div { border: none; border-top: 1px solid rgba(8,12,20,0.08); margin: 64px 0; }
+    /* ── AMBIENT BACKGROUND ── */
+    .bg-orb {
+      position: fixed; pointer-events: none; border-radius: 50%;
+      filter: blur(120px); opacity: 0.55; z-index: 0;
+    }
+    .bg-orb-1 {
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, #5B4ED6 0%, transparent 70%);
+      top: -200px; left: -200px;
+      animation: orb-drift-1 18s ease-in-out infinite alternate;
+    }
+    .bg-orb-2 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, #C9896A 0%, transparent 70%);
+      bottom: -100px; right: -100px; opacity: 0.25;
+      animation: orb-drift-2 22s ease-in-out infinite alternate;
+    }
+    .bg-orb-3 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, #7B6CF6 0%, transparent 70%);
+      top: 50%; left: 60%; opacity: 0.2;
+      animation: orb-drift-3 16s ease-in-out infinite alternate;
+    }
+    @keyframes orb-drift-1 { from { transform: translate(0,0); } to { transform: translate(60px, 80px); } }
+    @keyframes orb-drift-2 { from { transform: translate(0,0); } to { transform: translate(-50px, -60px); } }
+    @keyframes orb-drift-3 { from { transform: translate(0,0); } to { transform: translate(40px, -50px); } }
 
-  /* PHASE BADGE */
-  .phase-badge {
-    display: inline-flex; align-items: center; gap: 10px;
-    background: var(--black); color: #fff; padding: 10px 20px 10px 14px;
-    border-radius: 40px; font-size: 12px; font-weight: 700;
-    letter-spacing: .08em; text-transform: uppercase; margin-bottom: 24px;
-  }
-  .phase-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--rose); flex-shrink: 0; }
-  .phase-badge.p2 { background: var(--purple); }
-  .phase-badge.p2 .dot { background: #BB8575; }
-  .phase-badge.p3 { background: var(--rose); color: var(--black); }
-  .phase-badge.p3 .dot { background: var(--black); }
+    /* ── GRID OVERLAY ── */
+    .bg-grid {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.025;
+      background-image:
+        linear-gradient(rgba(255,255,255,1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
 
-  /* SYSTEM CARDS */
-  .sys-card {
-    border-radius: 18px; overflow: hidden;
-    border: 1px solid var(--border); margin-bottom: 28px;
-  }
-  .sys-card-head {
-    padding: 28px 36px; display: flex; justify-content: space-between; align-items: flex-start; gap: 24px;
-  }
-  .sys-card-head.dark { background: var(--black); }
-  .sys-card-head.purple { background: var(--purple); }
-  .sys-head-label { font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgba(247,245,242,0.5); margin-bottom: 8px; }
-  .sys-head-title { font-size: 26px; font-weight: 900; color: #fff; letter-spacing: -.02em; line-height: 1.1; }
-  .sys-head-tag {
-    flex-shrink: 0; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
-    color: var(--rose); background: rgba(187,133,117,0.15); border: 1px solid rgba(187,133,117,0.3);
-    padding: 7px 14px; border-radius: 30px; white-space: nowrap; margin-top: 4px;
-  }
-  .sys-head-tag.light { color: rgba(247,245,242,0.7); background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); }
-  .sys-card-body { background: #fff; padding: 32px 36px; }
-  .sys-desc { font-size: 15px; color: rgba(8,12,20,0.72); line-height: 1.65; margin-bottom: 24px; }
-  .sys-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 24px; }
-  .sys-cell { background: rgba(8,12,20,0.03); border-radius: 10px; padding: 16px 18px; }
-  .sys-cell-label { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(8,12,20,0.35); margin-bottom: 7px; }
-  .sys-cell-text { font-size: 13px; color: rgba(8,12,20,0.7); line-height: 1.5; }
-  .sys-items { display: flex; flex-direction: column; gap: 10px; margin-bottom: 22px; }
-  .sys-item { display: flex; gap: 12px; align-items: flex-start; }
-  .sys-dot { width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
-  .sys-dot.rose { background: var(--rose); }
-  .sys-dot.purple { background: var(--purple); }
-  .sys-dot svg { width: 10px; height: 10px; }
-  .sys-item-text { font-size: 14px; color: rgba(8,12,20,0.72); line-height: 1.5; }
-  .sys-item-text strong { color: var(--black); font-weight: 700; }
-  .sys-fine { font-size: 12px; color: rgba(8,12,20,0.4); border-top: 1px solid rgba(8,12,20,0.07); padding-top: 16px; line-height: 1.55; }
+    /* ── LAYOUT ── */
+    .page {
+      position: relative; z-index: 1;
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center;
+      padding: 48px 24px 80px;
+    }
 
-  /* IMPORTANT NOTE */
-  .note { border: 1px solid rgba(101,58,146,0.2); background: rgba(101,58,146,0.04); border-radius: 10px; padding: 18px 22px; margin: 20px 0; }
-  .note-label { font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--purple); margin-bottom: 8px; }
-  .note-text { font-size: 14px; color: rgba(8,12,20,0.7); line-height: 1.55; }
+    /* ── TOP BAR ── */
+    .topbar {
+      width: 100%; max-width: 640px;
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 64px;
+    }
+    .logo {
+      display: flex; align-items: center;
+    }
+    .logo-img {
+      height: 40px; width: auto;
+    }
+    .topbar-badge {
+      font-size: 10.5px; font-weight: 600; letter-spacing: .06em;
+      text-transform: uppercase; color: var(--green);
+      background: rgba(74,222,128,0.1); border: 1px solid rgba(74,222,128,0.25);
+      padding: 4px 10px; border-radius: 20px;
+      display: flex; align-items: center; gap: 5px;
+    }
+    .topbar-badge::before {
+      content: '';
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 6px var(--green);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.85); }
+    }
 
-  /* CALLOUT */
-  .callout { background: var(--black); border-radius: 16px; padding: 32px 36px; margin: 32px 0; }
-  .callout-label { font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--rose); margin-bottom: 14px; }
-  .callout p { font-size: 15px; color: rgba(247,245,242,0.72); line-height: 1.6; margin-bottom: 10px; }
-  .callout p:last-child { margin-bottom: 0; }
-  .callout p strong { color: #fff; }
+    /* ── HERO ── */
+    .hero { text-align: center; margin-bottom: 52px; }
+    .hero-eyebrow {
+      font-size: 11px; font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--purple);
+      margin-bottom: 18px;
+    }
+    .hero-headline {
+      font-size: clamp(36px, 6vw, 52px);
+      font-weight: 900; line-height: 1.05; letter-spacing: -.03em;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .hero-headline span {
+      background: linear-gradient(135deg, var(--purple) 0%, var(--copper) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-size: 16px; line-height: 1.65; font-weight: 400;
+      color: var(--muted); max-width: 460px; margin: 0 auto;
+    }
 
-  /* WARM BOX */
-  .warm-box { background: rgba(187,133,117,0.08); border-left: 3px solid var(--rose); border-radius: 0 12px 12px 0; padding: 22px 28px; margin: 24px 0; }
-  .warm-title { font-size: 14px; font-weight: 700; color: var(--black); margin-bottom: 8px; }
-  .warm-text { font-size: 14px; color: rgba(8,12,20,0.7); line-height: 1.6; }
+    /* ── CARD ── */
+    .card {
+      width: 100%; max-width: 560px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 36px 32px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04) inset;
+    }
 
-  /* PROGRAM CARDS */
-  .prog-card { border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin-bottom: 20px; }
-  .prog-head { padding: 22px 28px; display: flex; justify-content: space-between; align-items: center; }
-  .prog-head.dark { background: var(--black); }
-  .prog-head.purple { background: var(--purple); }
-  .prog-head.mid { background: #1a2030; }
-  .prog-head-left { display: flex; flex-direction: column; }
-  .prog-num { font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgba(247,245,242,0.45); margin-bottom: 6px; }
-  .prog-name { font-size: 20px; font-weight: 800; color: #fff; letter-spacing: -.02em; }
-  .prog-price-block { text-align: right; }
-  .prog-price { font-size: 24px; font-weight: 900; color: #fff; letter-spacing: -.03em; }
-  .prog-price-sub { font-size: 11px; color: rgba(247,245,242,0.4); margin-top: 3px; }
-  .prog-body { background: #fff; padding: 24px 28px; }
-  .prog-desc { font-size: 14px; color: rgba(8,12,20,0.7); line-height: 1.6; margin-bottom: 16px; }
-  .prog-checks { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; }
-  .prog-check { font-size: 13px; color: rgba(8,12,20,0.7); display: flex; gap: 8px; align-items: flex-start; }
-  .prog-check-icon { color: var(--purple); font-weight: 700; font-size: 13px; flex-shrink: 0; }
-  .prog-fine { font-size: 12px; color: rgba(8,12,20,0.4); border-top: 1px solid rgba(8,12,20,0.07); padding-top: 12px; line-height: 1.5; }
+    /* ── MILESTONE STRIP ── */
+    .milestone-strip {
+      display: flex; align-items: center; gap: 0;
+      margin-bottom: 32px;
+      background: rgba(123,108,246,0.07);
+      border: 1px solid rgba(123,108,246,0.18);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .milestone-step {
+      flex: 1; padding: 12px 10px; text-align: center;
+      font-size: 10.5px; font-weight: 600; letter-spacing: .04em;
+      color: rgba(255,255,255,0.3); text-transform: uppercase;
+      position: relative;
+    }
+    .milestone-step.done {
+      color: rgba(123,108,246,0.7);
+    }
+    .milestone-step.active {
+      color: var(--white);
+      background: rgba(123,108,246,0.12);
+    }
+    .milestone-step + .milestone-step::before {
+      content: '›';
+      position: absolute; left: -1px; top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255,255,255,0.1);
+      font-size: 14px;
+    }
 
-  /* ACTION GRID */
-  .action-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 24px 0 36px; }
-  .action-cell { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 20px 18px; }
-  .action-label { font-size: 12px; font-weight: 700; color: var(--black); margin-bottom: 7px; }
-  .action-text { font-size: 12px; color: rgba(8,12,20,0.6); line-height: 1.5; }
+    /* ── SECTION LABEL ── */
+    .section-label {
+      font-size: 10.5px; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--muted);
+      margin-bottom: 10px;
+    }
 
-  /* BIG PICTURE */
-  .big { background: linear-gradient(135deg, var(--purple), #3d2260); border-radius: 20px; padding: 52px 56px; margin-bottom: 40px; }
-  .big-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: rgba(247,245,242,0.45); margin-bottom: 16px; }
-  .big-title { font-size: 38px; font-weight: 900; color: #fff; letter-spacing: -.03em; margin-bottom: 36px; line-height: 1.1; }
-  .big-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .big-cell { background: rgba(255,255,255,0.07); border-radius: 10px; padding: 18px 20px; }
-  .big-cell-label { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(247,245,242,0.4); margin-bottom: 7px; }
-  .big-cell-text { font-size: 14px; color: rgba(247,245,242,0.82); line-height: 1.5; }
+    /* ── FORM FIELDS ── */
+    .field-group { margin-bottom: 14px; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .field-label {
+      display: block; font-size: 11.5px; font-weight: 600;
+      color: rgba(255,255,255,0.55); letter-spacing: .04em;
+      margin-bottom: 7px;
+    }
+    .field-input {
+      width: 100%; background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 10px; padding: 12px 14px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px; font-weight: 500; color: var(--white);
+      outline: none; transition: border-color .2s, box-shadow .2s;
+      -webkit-appearance: none;
+    }
+    .field-input::placeholder { color: rgba(255,255,255,0.2); }
+    .field-input:focus {
+      border-color: var(--border-hi);
+      box-shadow: 0 0 0 3px var(--purple-glow);
+    }
 
-  /* DISCLAIMER */
-  .disclaimer { background: rgba(8,12,20,0.04); border-radius: 12px; padding: 28px 32px; margin: 40px 0; border-left: 3px solid rgba(8,12,20,0.1); }
-  .disclaimer-label { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(8,12,20,0.35); margin-bottom: 12px; }
-  .disclaimer p { font-size: 12px; color: rgba(8,12,20,0.5); line-height: 1.65; margin-bottom: 8px; }
-  .disclaimer p:last-child { margin-bottom: 0; }
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px; background: var(--border);
+      margin: 26px 0;
+    }
 
-  /* FOOTER */
-  .doc-footer { background: var(--black); padding: 36px 64px; display: flex; justify-content: space-between; align-items: center; }
-  .doc-footer-brand { font-size: 13px; font-weight: 700; letter-spacing: .06em; color: rgba(247,245,242,0.5); }
-  .doc-footer-contact { font-size: 12px; color: rgba(247,245,242,0.3); letter-spacing: .04em; }
+    /* ── CONFIRMATION ITEMS ── */
+    .confirm-list { display: flex; flex-direction: column; gap: 11px; margin-bottom: 26px; }
+    .confirm-item {
+      display: flex; align-items: flex-start; gap: 11px;
+      font-size: 13.5px; line-height: 1.55; color: rgba(255,255,255,0.75);
+    }
+    .confirm-icon {
+      flex-shrink: 0; width: 20px; height: 20px; margin-top: 1px;
+      background: rgba(123,108,246,0.15);
+      border: 1px solid rgba(123,108,246,0.3);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; color: var(--purple);
+    }
 
-  /* CHECK ICON */
-  .chk { display: inline-block; width: 10px; height: 10px; }
-</style>
+    /* ── TERMS ACCORDION ── */
+    .terms-accordion {
+      border: 1px solid var(--border);
+      border-radius: 12px; overflow: hidden;
+      margin-bottom: 26px;
+    }
+    .terms-toggle {
+      width: 100%; background: rgba(255,255,255,0.03);
+      border: none; cursor: pointer;
+      padding: 13px 16px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px; font-weight: 600; letter-spacing: .04em;
+      text-transform: uppercase; color: rgba(255,255,255,0.45);
+      transition: color .2s, background .2s;
+    }
+    .terms-toggle:hover { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.65); }
+    .terms-arrow {
+      font-size: 10px; transition: transform .25s;
+    }
+    .terms-toggle.open .terms-arrow { transform: rotate(180deg); }
+    .terms-body {
+      max-height: 0; overflow: hidden;
+      transition: max-height .35s cubic-bezier(0.4,0,0.2,1);
+      background: rgba(0,0,0,0.2);
+    }
+    .terms-body.open { max-height: 520px; overflow-y: auto; }
+    .terms-inner {
+      padding: 20px 18px;
+      font-size: 11.5px; line-height: 1.7;
+      color: rgba(255,255,255,0.38);
+    }
+    .terms-inner::-webkit-scrollbar { width: 4px; }
+    .terms-inner::-webkit-scrollbar-track { background: transparent; }
+    .terms-inner::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+    .terms-section-head {
+      font-size: 11px; font-weight: 600;
+      color: rgba(255,255,255,0.42);
+      margin: 16px 0 3px;
+      letter-spacing: 0;
+      text-transform: none;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .terms-section-head:first-child { margin-top: 0; }
+    .terms-inner p {
+      font-size: 11.5px;
+      color: rgba(255,255,255,0.38);
+      line-height: 1.65;
+      margin-bottom: 8px;
+    }
+    .terms-inner p:last-child { margin-bottom: 0; }
+
+    /* ── CHECKBOX ROW ── */
+    .checkbox-row {
+      display: flex; align-items: flex-start; gap: 13px;
+      margin-bottom: 24px; cursor: pointer;
+    }
+    .checkbox-row input[type="checkbox"] { display: none; }
+    .custom-check {
+      flex-shrink: 0; width: 20px; height: 20px; margin-top: 1px;
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 6px;
+      background: rgba(255,255,255,0.03);
+      display: flex; align-items: center; justify-content: center;
+      transition: all .2s; cursor: pointer;
+    }
+    .checkbox-row input:checked + .custom-check {
+      background: var(--purple);
+      border-color: var(--purple);
+      box-shadow: 0 0 12px var(--purple-glow);
+    }
+    .check-mark {
+      display: none; font-size: 11px; color: #fff; font-weight: 700;
+    }
+    .checkbox-row input:checked + .custom-check .check-mark { display: block; }
+    .checkbox-label {
+      font-size: 13px; line-height: 1.55; color: rgba(255,255,255,0.6);
+    }
+    .checkbox-label strong { color: inherit; font-weight: inherit; }
+
+    /* ── SUBMIT BUTTON ── */
+    .btn-submit {
+      width: 100%; padding: 16px 24px;
+      background: linear-gradient(135deg, var(--purple-dim) 0%, var(--purple) 60%, #9B8CF6 100%);
+      border: none; border-radius: 12px; cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px; font-weight: 700; letter-spacing: .01em;
+      color: var(--white);
+      box-shadow: 0 8px 32px rgba(91,78,214,0.45), 0 0 0 1px rgba(255,255,255,0.08) inset;
+      transition: transform .15s, box-shadow .15s, opacity .15s;
+      position: relative; overflow: hidden;
+    }
+    .btn-submit::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+      opacity: 0; transition: opacity .2s;
+    }
+    .btn-submit:hover:not(:disabled)::before { opacity: 1; }
+    .btn-submit:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 40px rgba(91,78,214,0.55), 0 0 0 1px rgba(255,255,255,0.1) inset;
+    }
+    .btn-submit:active:not(:disabled) { transform: translateY(0); }
+    .btn-submit:disabled { opacity: 0.35; cursor: not-allowed; }
+
+    /* ── FOOTER NOTE ── */
+    .footer-note {
+      margin-top: 20px; text-align: center;
+      font-size: 11px; color: rgba(255,255,255,0.2); line-height: 1.6;
+    }
+    .footer-note a { color: rgba(255,255,255,0.35); text-decoration: none; }
+    .footer-note a:hover { color: rgba(255,255,255,0.6); }
+
+    /* ── SUCCESS STATE ── */
+    .success-screen {
+      display: none;
+      width: 100%; max-width: 560px;
+      text-align: center;
+      padding: 0 16px;
+      animation: fade-up .6s ease both;
+    }
+    .success-screen.visible { display: block; }
+    .success-badge {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple), var(--copper));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 30px; margin: 0 auto 28px;
+      box-shadow: 0 0 48px rgba(123,108,246,0.4);
+      animation: badge-pop .5s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
+    @keyframes badge-pop {
+      from { transform: scale(0.5); opacity: 0; }
+      to   { transform: scale(1);   opacity: 1; }
+    }
+    .success-headline {
+      font-size: 32px; font-weight: 900; letter-spacing: -.025em;
+      color: var(--white); margin-bottom: 12px;
+    }
+    .success-sub {
+      font-size: 15px; color: var(--muted); line-height: 1.65;
+      max-width: 400px; margin: 0 auto 36px;
+    }
+    .success-links {
+      display: flex; flex-direction: column; gap: 12px;
+      max-width: 400px; margin: 0 auto 28px;
+    }
+    .success-link {
+      display: flex; align-items: center; gap: 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px; padding: 15px 18px;
+      text-decoration: none; color: var(--white);
+      font-size: 14px; font-weight: 500;
+      transition: border-color .2s, background .2s, transform .15s;
+    }
+    .success-link:hover {
+      border-color: var(--border-hi);
+      background: rgba(123,108,246,0.07);
+      transform: translateY(-1px);
+    }
+    .success-link-icon {
+      width: 36px; height: 36px; flex-shrink: 0;
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .success-link-text { flex: 1; text-align: left; }
+    .success-link-title { font-size: 13.5px; font-weight: 600; margin-bottom: 2px; }
+    .success-link-desc { font-size: 11.5px; color: var(--muted); }
+    .success-link-arrow { color: var(--muted); font-size: 13px; }
+    .success-timestamp {
+      font-size: 11px; color: rgba(255,255,255,0.2);
+      margin-top: 8px; line-height: 1.7;
+    }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── VALIDATION STATES ── */
+    .field-input.error { border-color: rgba(248,113,113,0.5); }
+    .field-error {
+      font-size: 11px; color: rgba(248,113,113,0.8);
+      margin-top: 5px; display: none;
+    }
+    .field-error.visible { display: block; }
+
+    @media (max-width: 500px) {
+      .card { padding: 26px 20px 24px; }
+      .field-row { grid-template-columns: 1fr; }
+      .milestone-step { font-size: 9px; padding: 10px 6px; }
+    }
+
+    /* ── Confirmation statements (plain, fine print) ── */
+    .confirm-stmt {
+      font-size: 11.5px;
+      color: rgba(255,255,255,0.38);
+      line-height: 1.65;
+      margin-bottom: 8px;
+    }
+    .confirm-stmt-icon { display: none; }
+
+  </style>
 </head>
 <body>
 
-<!-- COVER -->
-<section class="cover">
-  <div class="cover-top">
-    <div class="cover-logo"><img src="data:image/png;base64,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" alt="ScaleLogix AI"></div>
-    <div class="cover-tag">Partner Onboarding Guide</div>
-  </div>
-  <div class="cover-body">
-    <div class="cover-eyebrow">ScaleLogix AI &nbsp;·&nbsp; Partner Series</div>
-    <h1 class="cover-h1">Your First<br>30 – 60 – 90 Days<br><em>Live With ScaleLogix AI.</em></h1>
-    <p class="cover-sub">A clear, honest roadmap for your first 90 days — how your systems activate, what to expect at each stage, and how to build early momentum the right way.</p>
-  </div>
-  <div class="cover-footer">
-    <div class="cover-footer-brand">ScaleLogix AI</div>
-    <div class="cover-footer-conf">Confidential &nbsp;·&nbsp; ScaleMethods Partners LLC &nbsp;·&nbsp; Authorized Distribution Only</div>
-  </div>
-</section>
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+  <div class="bg-orb bg-orb-3"></div>
+  <div class="bg-grid"></div>
 
-<!-- WELCOME -->
-<div class="page">
-  <div class="eyebrow">Welcome</div>
-  <h2 class="section-title">You're officially <em>live.</em></h2>
-  <div class="rule"></div>
-  <p class="lead">This guide walks you through what happens over your first 90 days as a ScaleLogix partner — how your infrastructure activates, what your acquisition options look like, and how to build sustainable deal flow. Read it carefully. The partners who move fastest are the ones who understand the system.</p>
-  <p class="body-text">What you've built with ScaleLogix is not a plug-and-play software tool. It is a fully deployed operating infrastructure for a professional AI-services business — including your brand, your CRM environment, your outreach systems, and your fulfillment workflows. This guide covers what comes next.</p>
-  <div class="note">
-    <div class="note-label">Important Context</div>
-    <div class="note-text">ScaleLogix provides infrastructure, systems, and operational support — not guaranteed clients, leads, or revenue. Success depends on your engagement, your market, and your execution. We guide and support you at every stage, but this is your business. We are your operational partner, not your sales team.</div>
-  </div>
+  <div class="page">
 
-  <hr class="div">
-
-  <!-- PHASE 1 -->
-  <div class="phase-badge"><div class="dot"></div> Phase One</div>
-  <div class="eyebrow">Days 0 – 30</div>
-  <h2 class="section-title">Launch &amp; <em>System Activation.</em></h2>
-  <div class="rule"></div>
-  <p class="lead">Your infrastructure is built. Now the two core acquisition systems begin to activate. This first phase is about initialization — establishing the foundation that makes Month 2 and beyond perform. Volume is intentionally conservative at this stage. That is by design.</p>
-
-  <!-- ICAS CARD -->
-  <div class="sys-card">
-    <div class="sys-card-head dark">
-      <div>
-        <div class="sys-head-label">Core System 01 &nbsp;·&nbsp; Shared Infrastructure</div>
-        <div class="sys-head-title">Intelligent Client<br>Acquisition System (ICAS)</div>
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <div class="logo">
+        <img class="logo-img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAboAAABiCAYAAAAm7RZzAAA8uElEQVR4nO2dd3wUxfvHPzN7KZdKeoE0IkF6RwUUUBRpUqSj2KhfewW/9t7LT4pdQVEREBAEpBN670gvSUgo6T25u93n98fdbu4u7ZJcivnOm1dekHDZnd2dnc88ZZ5hXt6eEAgEAoGgscLruwECgUAgENQmQugEAoFA0KgRQicQCASCRo0QOoFAIBA0aoTQCQQCgaBRI4ROIBAIBI0aIXQCgUAgaNTo6rsB9YGbiw6RQQEU7OuN3IIinEq+yowmE6i+GyYQCAQCp/M/J3TBvt707LD+aBPVFJwxcM6RkpFNX6xcj8MXEll9t08gEAgEzoX9r1RGkRhDTGgQvTR6EIJ8fcAYA2ccjAGMcVzJzMYXK9bh0IVERiRsO4FAIGgs/E/E6CTO0S66GT0z9C4E+fiAMw7OmEXkzH83DWiCvu1bwdvdTaicQCAQNCIavdBJjKF9dDN64I6eiAjyB+fcSuDMX5xzcM7RPCwY/j5e9d1kgUAgEDiRRh2jYwDimobSQ/16ITo4EFI5Iqf+29PNDa66Rn1LBAKB4H+ORj2qB/r60HPD70ZIEx9wzmwEzl7kAAajyQRZluu72QKBQCBwIo1S6DhjaB4aRDNHDixX5BjnsJh3ABiICPn5+TAZTfXdfIFAIBA4kUYndJwztI1sSpPvug2hTXzLFTlm9QcAsrKzkJOTCxKr6QQCgaBRUa1kFLOrr+HBGUO7yGb04O09ER0coIkcrL4Ys4iclfsyIyMDaWnpkBVZEz6BQCAQNA6qZNF5e3tT8+ax8Pb2RkFBAS5duoiMjIwGoQwMQGxYED18Zy/EhARCkiRN5DRRY9wuRsdwPTUVGekZICIhcgKBQNAIcVjoYmNvoJu632RjCbVv3wEHDx6gY8eO1usiawbA39uLnh8xAOF+vuBW8TfGzO5Je5FjjCE1NQ3paenmY6hJKULrBAKBoFHhkNA1bdqUOnboaLPmzCwgQNcuXeHq4kLHjh9DcXFxncuEmnjywogBCPPz1ZJMmLXIcVuRIxAyMjKRkZEJwCJy3PwlEAgEgsZFpUKn0+kQFRkNNzc3cxKHlWiootemTVsQEU78c4KKiorqTC04Y2gT2ZQeubMXwv19bdqm/rEXOcaAzIwspKdnQFEU7TrAYJOcIhAIBILGQaXJKG5ubuTp6QlJkszCZidyjDG4u7ujTZu2aNu2HXR1tOCaMYbWEeE08fYeiAkNKpVJab9OTo3JpadnIC09HYos233GvJhcIBAIBI2LSlWJc0kTOZuF1ur3nIMB0Ov16NChIzjntHfvnlqXjOigAJp0162ICQ2Cjks2mZRliRyzJJ6kp2eCiLSdC+zjdsKgEwgEgsaFA+YXmd16ZVhyzGLhqbi6uqJ7t+5gjNH+/ftYbVUZ8fPypBn3DkDTAL8yxcr+ZwoIy7ftQ4SXG7zd3csUOVh2MRAIBAJB48KhkZ0Uc0ZlWSLHGDen5jNmET2Gbl27oVu37uTu7u7UVEzOGGJDg+nd+0c4LHLFJhP+3HUQi7fvhdEk21RFKVljB811KQw6gUAgaFxUatGZkzMIikKQJMvPtPqQgKLIIMAiMBycM3AuoVPHzmCM4fDhQ1RYWFhj/eCMoVVEGD18Ry80c1DkiAhr9h3Bb/G7kJtfyBhjZF0pBRad45ybr5SZ/xYIBAJB48GhzBHV2lFdkQSAW9bNae5MTeQ4ZFkGY0Cb1m1AioL9B/bDZKp+DUnGGFo2C6UHbu+BG8JDHBI5xhmWbNuHhfG7kJGbz9x0kuU61H3oUMbvVbuJAoFAIGigVC50dtvaEAGMSHP9qe5MblmDlp2TA6PBoAlIXFxLGIxGOnjwQLVlpFmAH02+6zbEhgZDZ6l4Ur7IAYwz/LZlFxZs2oGCYoN23soSVoTvUiAQCBofDsToLIupLfE41WqzT80HgNzcPBiKiwEAaqUUSZLQqWMntGnTtlrxOn9vc+JJXHioQyInE/DH9n34ZfNOG5EDSqy4Mi1ALcYoEAgEgsaEQ8koJZZbGSLHORhnMBqNMJmMZS5BAICOHTrCy8vLYbFjlsSTN8YNQ3RwYClRshUrs4gVm2Ss2nsYC+N3Ib+odJWWikROuC8FAoGgcVKp0DEGS/yNlyly6iJyWVFKsi8tIsetPuPq6obg4GCHGsUYQ6tmYTS1f2/EBAc4IHIMBIa1B47h1y07kZaTV7ZcqcJcxrG4JspC6QQCgaAx4WAySlnWkCUBRRUMWCd3WImcJiQKdDoXh87VIjyYJva9BS2bhZYrTPYJJX9s34dft+xCem45ImdpX6VxOoFAIBA0KhwTOms3pRar49p+bwRAURRIks5WFK2EBGDIzsqq9Fyhfr40tX8ftAgL1rbaKVvkSr5ftG0Pfly3DYUGQ/lKxaxjjXYip9W4rNtklPKEtS53gmgIbRD8e2mo/aehtktQPzgWowPTXJSqyGmiwTlycrJx+PAh5Ofnle0OZAxXrqbgeur1CmUkwNuLZtw7EC2bhpYjcsxG5EwKYdmuA/h5446KRQ4wF3ixSTyxqo2prqezWKa1jaOWo3l9X+2c39Fjl0xUBAIzjvaduvSSONKnyW5JVH0h3qe6x6EF47ZZl2aRsxE9MCQkJiItLQ3t2rVHQEAAdDodGGMwGAy4npqKLVu2lDubYowhJiSQHh90O24IDS4nJmf7vcEkY92h4/h1807kFjqwY4KNpWm3HMFyLbXdAdUXLCoqilq1ao3OnTohIiICnl5eIIWQm5eLq1ev4vTpUzhz5gwuX76M69evM7VdNZ2Nqsdxc3OjyMhIREdFo127doiOjoaPry9cdC4oKipCenoaLly8iJP//IPEpEQkJV1mJpPRKW2wxsvLi+Li4rTv8/Lyce7cWaYoSo2PzRiDXq+n1q1bQ5EVMM5x6tRJ5OfnO/0h+/n5UWxsLMztrt7hiQjHjx9jRqOxws95eHhQq1atQYoCMODkyZNwRkGGyrB+N4KCgikyMgKtWrVCXFxLhAQHw8PDE7IsIy8vF0mXL+PEieO4cOECEhMTkZubW2v7VarvsSRJiIiIoKioaLRv3x5RUVHw9/ODq6srDEYjsrKykJKSglOnTuHSpYtITk622TTa0fa5ubqhTds22odPnz5daZ/y9vamFi1amCfbnCEzMxOXLl2qVj9njMHX15datGhhWa/McPXqVSQnJzco9fTz86fY5s2hkPmdyMhIx6VLl5zWRl9fX4prEQdZliErMk6ePMmMRmO5z9HhdXRq7M1W5Cz/5ubqKRcvXWTZ2dnUrFkzeHl7gxQFWVlZuJRwqdyXkTGGluEh9MDtPXFDWIhDIscYw7pDx/HLph1Izc51+OaZLVNrgSu9aLy2fJecc/g18aPX33gD/e/qj8DAQG1xvfVMU7KUn8nPz0d6ejrWrl1Ln33+KVJSUmrUMMbMlWLuueceeuLxJxETEwM/Pz9IkgRZlqFYJRNJkrmQd3FxMTIzM3HmzBmaNfsLrF27lqnHcQbDhg3HB+9/oH1/8eJF3DN0CGVmZtZ4YOSco0WLFljx50oQEYqKijB6zCgcPnwYzqzByjlHn959MGfO3BrdFyJCl66d6dq1a+U+Z845bmx5I1auWAkiBTk5uRg56l6cOnXKqddkjypyzZo1oyeeeBL97+qPoKAgeHh4QFEUm3MzxqDT6aAoCnJycnD16lXMmz+Pvvnma21gd1b/4ZxDURTcfNPN9NRTT6NTp07ws4ib2qe1dnEGnWRuV25uLlJTU7F58yaa++WXuHjxgkPvFmMMoWGhtHLFXwCAgoICjB03FgcPHqhwEu/p6Ym5c79ERLMIAMDFSxcxYsRwSk1NrVI/V9+9GS/MwIMPPgRFUaAoCibcNx4pKSkNwi2rtnH69Ol49D+Paj/fv38fho8YDiKqcTslScLNN92MefPmQ1ZkXLt6DcNHDKPk5ORy6ys7FKPjrGSpgI3IWSWeqAKRkZnBMrMyIUkSiKjCF5ABiA0Nool9e6BVRHg5FU/sRY5j+W6zuzKjgsSTMs9Xyoqrm8oonHNER0fTvB/no0OHDtqDLioqQmZmJoqLi8EY4O6uh6+vL/R6PTw8PODl5YUpU6ZgzJgxeOqpJ2npsqVVbqE6SN3U/SaaMXMm7rj9DgAEWTbvxWcymZCdnY2ioiLIsgxXV1d4e3vDw8MDOp0OwcHBCA0NxW233YaNGzfQ2++8jYMHD9ZIiNTB8KEHH4KHh4f2szZt2qBv375YunRptY9tdyZ4e3vDYDBoEwjUxljAAE9PT+25VudlVhRFS5SqaNAEAC8vL8tyHlk7X23BGIOfnz898MBEPPboYwgKCrZ5r4uKi5CbkwuDwQDGGfTuevj4+ECn08HHxwdNmjTB+++9j4cfepjefOtNrF69iqmTqpq0CQBiYmLo6aefwbix4zRxZYxBlmXk5OSgoKAAiqKASxweeg/4+PhAkiR4eXnB19cXLVq0wLhx47HglwX01Vdf4tKlSxX2a3UirNfrtflwZWMGEeHatWvsueeepV9/+Q3e3t5o26Yt3nn7XTz+xGNUXFxcpXfp1ltvpYcffgQuLi5QFAXvvfcutm7d2qCsOb1eT6NGjoJerwfn5lrIPXv2QocOHejw4cPOaavlnTMYDPDw0Ff6cYezLrmV0FiLHOOs1NMmIodKfgX6eNPU/r0ricnZityyXfvx9erNrLgSF0/Z11FJxiVzfjIKZxxNmjShP5evQFRUFBRFgdFkxNdff43FixYhLT3NMmARXFxc4Ovji+7du+PekSPR45Ye0Ol0cHNzw5GjRyocBMu7XiLCU08+Rc8++xy8vLw0qy0xMRG//vYr4uO34MqVK1DNfkmS4OHhiY4dOmDw4CG46667tJl77959cPHSJRw4cKDKbbFvV79+/ahLly6lYiUzXpiJlStXwmAwVOvYtucx/13b8Rhrt3daWip+XrDAPNGrgmuKiJBfkF/5PbXyQtQ2nHP4+vrSb7/+hptvvhnWFtmOHTuwePEi7N23F/n5+TCZTGCMwcXFBWFhYejbpy/GjRuP6OhoKIqCuLg4fPvNt1i2bCk99/xzKCoqqtbuJup9vu223jR3zlw0a9ZME7irV69i4cLfsH79eqRcSYHBYASRYlne5IqAgED0uOUWDB48BN26dYMkSdDr9Zg+bTqSL1/GF7O+cPi+VAUiwvbt29mbb71BH37wERhjGD16NA4ePIAvv/rSoWNIkoTY2Fj6ZcGvcHd3B2MMK1euwOf/97lTvSw1h2HC+AmIiYnR+qmimJ/Be+++hwEDBzjpLOZ+UFKnuOKB27FdUq1iWtaLxlU3Jq/ipqUMgL+3F704ciDimoaW4a5EKZEzyQrWHjyC+Ru2ozoiB9glo5RTGcXpUyMGTJk8RRO53NxcTJr8CNatW8dU0bGOwV2+fBn/nPwHP/38E7p27UpTJk/ByVOncOGCY+4V+2udOWMmPf/8C9rLefLUScydOwdLly5Ffn6+NptUP69aI2fPnsHiJYvRvHlzmnj/RNw7ciQCAwLx66+/1FjkXF1dafq06dp1P/PM03j00cfQvHlz3Hjjjbjrrv6kzvz/TciyjMuXk/Hxxx+hoKCgylZvwxmszANI27ZtaeFvCxEe3hREBIPBgB07tuPTzz7Fjh07GABt4qRCREhISMCePXswa/YsGjVqNKZPm464uDi4u7tj3Ljx0Olc8Oxzz1BVY3eqJ2Dw4ME064vZ8PT0BGMMCQkJ+Orrr/DTT/NRWFhYbp++ePEiDhzYjy9mfYHOnTrTgw89hEEDB0GSJCxdtlQblGsDzjkWLVqEAXcPxJ139oOiEJ544klsid9Cp0+frrCvq1bqzBkvwtfXF0SEtLQ0vPXWW05xBToLc/zQhx5//Antvk+ZOhmffvIZ9Ho9evbshW7dutH+/fvr/N2ufME4mNVauNLb9FQ1K48xICYkiGbeO6AMkbNYj3YiZDDJWH/4OBZs2ons/IJqa5EqZhVVRnGmScc5h4uLC/XrdydMJhM453jnnbexceNGmyC46mu3dn3Jsox9+/ax6f+ZzmbN+qLKHZqI8Oqrr9EzzzyrbZy7bNkyDBo0EL/88guzFjnrdti73y5cuMBef+N1NnDgALz43xdx+PDhGsfPWrZsiU6dOkNRFBw9egTz5s9j8+b9qL0c48aO1ZKZ/m3Yxnv/naiTke+/+wFhYeFQ47YvzHgB48aPw86dO5l1f1T/bd+f8vPz2U8//cQGDLwbi5cs1rw2o0ePxty5X8LV1ZWqep9uueUWTeQkScLOnTsx5J7B+Prrr5j95MK+T6s/A4DDRw6zp556kg0fMQzTpk9FcnJyrQ6+lpgle/iRh3D27DkAQHh4OL755lu4uLhUeh8mT55MQ4cOBQAYjUaMGTsap89ULJB1DRHh5ptuRrMIs5W9fv16/P7772zxksXaZ4YPH6FZ4HVJ5Ta4VVZiWXvRlbhtHEh8ZECLsBB6pF8vtGwaVobIlSVCHBsOn8DPG3fgWlZ2zRIyeEl2ZSnrzrJHnTNRFAWurq6IiGgGAEhNTcW8+fNgMpkcEi1FUWA0GlFcXLqcWUVwzjF40GB69D+PwsXFBYwxLPhlAaZMncwyMjKYdQJMZagDWFJSEps370dW010oiAgjho+Aj48PiAj/98X/wWQyYf5P83H16lXIsoybb74FYWFhDWOaWk2sB39HvxoCjDF4eXnRb78tRFxcHBhjSE9Px9hxY/HTT/OZ0Wh0eHA1T9hMyMjIYE888Th+/PFHLWbT/67+GDlylMPXzRhDeHg4/d/nX8DLywucc2zfvh33T7wPycnJVZ58qQJ4/Phxtnbt2lrLCrUnJyeHPf/8cygsLAQRoUP7Dvjvf18qd2LHOUe3bt3og/c/1CYKc7+ciwMHql8kvzZQ2z569BhIXILRaMS7770DRVHw0UcfobCwEEajEXf37w83N7c67+xVqHVpFaOzEj6uiocDx4kKCqSJfXugTVRTSFLF2Y/q18q9h/DDuq24mlkzkTNfR+VxOmdPNFxdXeHh4QkAuH79OoqKHFgKYUV1XkBFUfDyyy9rIrd3314899yzDgtsee1wxmDQpEkTmjjxAciyjITEBGzdug2SJCErK4v9sfQPSJKEgIAAPPTgQzU+l6DqEBEGDhyEPr37gIg0L8SaNasZgGq59ixZr2zGzBew5u81qsWIN994E/7+/pVaM6rL8qMPP0JsbCwA4Ny5c5g8ZTIyMjKqbdWUZfHVNkSEbdu3sVmzvtBEf8rkKWjbtl2pRjDGoCgKXn/tDW2cOn36ND788APtWA2JiIgIGjx4MBRFwaFDh/DPP/9AkiQkJSWyTZs3gXOOmJjmGDt2bJ23zWGhU0VOtYqsK6NwXnkSh5+XB03u1wuxwf4wFBdDUahCweGcY+Xew5jz1wZW1ezKyq+j9Dk5q52FnCaTCQajAYwxBIcEw8PDo1Z7J2MMjz36GLVu3QaAWVwfeeQRm9hFfcEYw6RHJsHf3x86nQ5bt25FenoaU9cD/fnnn9pMd9KkSQgLC6uya0tQfVRBmTRpkvZ+rFmzBvN/ms9qOtFRxe6pp57E5cuXQUQICgrC888971ByR7u27ahXr1stFZgkfPbZp0hJKT+dvCFjtnbeZStWrgARQa/XY968eQgPD9f6O2MMLi6ueOedd6lXr14AgOTkZAwfMaxBvMv2cM4xY8ZMuLm5wcVFh9VrVsFoNGrv9oo//9Se839ffAk+Pj51+m47tk2PlcjxMiqjmNfRld/oJh7uNLnPTfDVMaSnZyAtPR3JKSnIzMoCAaXqWZpkBav3HcW8dVtRbKhe4kmZV1KusFr+D465YKtyPoPBgOvXroOIEBgQiKlTp9VatRHGGJo0aULTp/8HgLnzrVy5AklJifWuFpxz+Pv705gxY7UEhnnz5tlYCEePHsHFixct2X5NMGLEvQ1u1tqYYYyhR4+e1K1rNwBAVlYmnnzqiRp5AqwhIly5coUtXfqHlvgxZMgQBAcHU3lip74ngwcPho+PDwDg0OFD+H3R7w1usK8KkiThtddeRUZGBhhjaB7THG+//Y7FhWm29Pr26UPTpk6DLMvgnOPd995FSkpKg4rLASXLp4YMHgIAUBTCsmXLbD6zafMm5Ofnqy5o9OnTp27bWNkHGDPHtrhkm3xivTNBRa5LD1cXGt2tA5r5elvSrQlE5k6fm5uLnOwcrTwXGINRVrDp6D/4edN2ZOQ5t4qFumDcfnsfayF3NgaDge3du0fzwc+cORP333c/ubvrtZfbmckLcXEtERDgr1VNWLbc3OHqe1AgInTp0gVRUVEACGvX/o1Dhw7aLCIuKipis2Z9ATXLbOg990Cv1wurrg6ZeP9Ebea9d98+ZGRkMM6ct5SBMYYlfyzR1uEFBgahefPYcl2i6pKXwZZBFAC++eYbh5YvNWRkWcaFCxfYtOlTkZeXB1mWMXDAQAwaNIgAQmBgIL3xxpvgnEOSJCxY8DMWLvytQYq7oijo2/d2Le7+/fffIykpyebdTktLY7PnzAaY+fP3jhhZKmO3NnGoB6u7FJRs08NsrDDOynddtgwNQmywv9kfbiVyimL+yi8ogLnsEYPEOTYf+Qc/bdiOKxlZFd4BSZLg4+NL/gEB5O7u2GBok13JSsTV+lqcadGp7p4vv/pKS8TQu+vx6aefYfOmzZgwYQL5+/uTtVuIgWlB5+qc78aWLaHXe4BzjuvXr2Hfvn21ljLtKOq1PPTgw3BxcYHJJGPWrFmlPqcoChYtXsTOnTdnpXXp0hWtW7eu07bWFPWxqdVlHPmqz7qLKmoSSo8ePQCYZ+l7du+GwWCwlHFyDoqi4NixY+zM2TNgjMHDwwPt27VTW1Fmu5o3j6WWLVsCALKysrBr1856n7g5i3Xr1rHPPv8MjDG4ubnh22++Q6tWremH739A69atQUTYt28fnn3u2TqPJzqC+m7fN+E+EBHy8vLwyacfl2onEeHjjz9Celo6FEVBv379EBQUVGcX4+CCcWvXZUnmornQc8VuuOiAJuAAFCJwYiAQGMwFKogUmEwmmExGSJIHVu87gu/Xxle41Q5grnPWtUs3+Pn7Q6eTYDKakJCYQIcPH6qwVmBZIqfW6qytZBRFUXD69Cl278h7ac7s2QgODoEkSWjdujXmzJ6Ljz4swJkzZ+jU6VM4fuwYTp8+jUsJl3Dp0iUYDUbm6CCjCmkLS6acoijYtWt3lZNfaotOnTpRv379wBjDuXNncfzE8VLrlhgzV2pZtGgRZs6YCc45/vviSxgzdvS/YgbPGINe74FuXbvBYDAQOVCGhYGhsKiwxtVmagrnHIGBgfD0Mtes1Ol0OH36NCQuQVacGwcjIuzZswct41qa+2yLFtoYYn8LGGNo3bq11qfT09OQk5Pr8Jq3qnhL6npCqCb7/PjjD7jjjjvQ45YecHNzw5LFSxAWFqZlXb/62isoKipqkNYcAAy4ewB16tQJRITdu3cjNTWVqeORCmMMxcXFbP36dTR27Dh4enri1VdexZNPPVkn4u2A0JkXhpeInOXfqsip1l05lhBnZnEjIrPrknMoADgzd2pSCAwMa/YdxRcr1qHIYCy3VzLGEBQUTP3v6g+dTgdJp9NcqAEBAfD19aXNmzeVG6BmHGYLTrNE7UWudjSBiLBhw3o25J4h9NVXX6NL5y4ASpYftG3bFu3atcPYMWNhMplgNBpx/vx5fPb5p7R48WJWlZc6JDhY++zZs2dqdRGsozDG8Oijj8HV1RUAsHr1amRkZJR6cdUXf926tXjyiSfh7u6Ofv36oVOnTnTw4MEGn3hgqV6BRYsWV/5hK1JTU9G2XVvIcv2Kube3N3Q6nTbwXLl6xemVglQunD+v1XoNDQ2t8LPNmjbV3Fy5uXkoLi5y+DwNaelGWSiKgoyMDDZq1EjatXM3IiIiEB4erln5jz/+GHbt2tUgRc6SPUszZ84EYO7/K1auKDOmq7qgV6xcifHjJ8BkMmHcuPH4/P8+p0uXLtX6u+3A7gUli8bV5BNrS45XYgUlZGShS3RTSJyDGAAiMAYQmX9JAbDp2CksiN9TochJkoSoqGjq3r271glIUaBwDk4EzjgiIyIRG3sDnTlzuozj2K6h42Wsp6uFuigaZsvuNOvX7w7ceuut1KtnL7Rr1x6RkZGIjIyEt7e3FnR2c3NDmzZt8N2332P6tOn09jvvYPPmTQ51dnd3vSYYubm59f6SM8YQFRVFPXv0hCzLKCwsxM8Lfob9jE9FURT8888/OHzkMHrc0gOMMYy8d2SNy47VFaqnw1E45xZrtf5jqC4uLjYemqIixwWlquTm5mr/1us9yo3XEBE8PM3LcxhnMJmMkGXHXXi9et1Kzz37HIgq31nipZdfwsmT/9SLqERGRmrLgdT7YDQa4ePrU+8T1Yro2LEj4iyW+fXr17Fq1V/lPhtFUbB9+zakXElBSHAIXF1dMeDuAZgzd06tt7NKuxeorj5V9KxrXpbXh06mpCIhMgtxYYEWtwRBUQDOFMgADiamYM2RU0jLKX8XArXOW9++d5hjBpYFz2Z3qNlSJG5emxMaEoLz58+VWUxaFeYyRc5iqdbaFBYlNUDj4+PZli1b1BgNeXv7oGvXrhhw9wAMGDAAYWFh2ky0c+cuWLJ4CR6Z9DAtX7680pfQJJfMptRYX32KAxGh3x39EB4eDkWRsXTpH5Vu12EwGNhHH31Iy5f9CVmW0b//3XjzrTepoKD6VXHqAkVRkJmZiT/+WAJuKWpeGYwxpKWmNggBVxSCteA6MwnFHsnq/qiJU+WhiqD576qVG/Tza4LevXtbCqfb/qIWfrHE6L29vat1LTVBrSe68LffER4eriViSZIEnU6Hjz/6BGfPnKXtO7Y3KI+G+jyGDh0GvV4PxhjmzJldpqdGhYiQk5PD3n33XZr1xSyYTCYMHz4cs+fMrvVxysEdxkvH6LSF4truBWWTbzCwFUdO0u2G5mjTNAQerq5gDMgvNmDvxcvYfuYiUnPLz65kjCE6OpoGDhwMXx8fJCQmakVCmVpVAoBCCiTG4eLqqm09U9ax7Jcy2C81qIudV9UZmmWLE5aWloq1a//G2rV/Y+bMGdSlaxeMGD4CY8aMgbe3DxhjeP+9D3DixAk6e/ZsBR0JyM/L1xaiBoeE1OsAakk2oClTp1oC6cDVa9cwYvgIIlRwqy2ZWdeuX0NwUDBiYmIwYvgILPhlQR22vuoopCApKQlvvPkGCgoKqpQGXt9CZ46hFEGWS9rs28S31s4XHBICNYaZnZNdYbuyMjMBmPuEm7ubZvk4cs/ycvOwf/9+LTfA6sgwmUxo06YNfH19LWNADS6oGqhxx8cffwIRERGQZRlpaWl44MGJ+OTjT6CuhX3rrbcxaPBAysvLa1AuzICAABo9ahQAs/Wfm5uLEcNHVNrA4qIi5OXlwdPTE506dUaf3n0ofmt8rd59x2J0alzOKinFZqfxSiyhK9m57M9DJ2nX+SQEentAUYDruXlIzclHobHimFx4eDiNGjUGQYFBKCouMieykFXZJEUBcQ4QQVYUFBYWlpu4UJYVV2o9XeU3xGlYD4RqBy4sKmS7du3Cjh07sPKvlfTn8hVgjCE4OBiTJ03GCzNeqOAlJ6SkJGtC3+rGVvUudPfcMxQt41pqP3vh+ReqVPZJvdZXXnkVS/5YQg05KA+UZKE19NiQPURAdnY2TCajds/VnQFqgxtvvBGkmF3syZcvV/jZpKQk7X76+vjC3V2P7OzyxdGaLfFb2NZtW8v8P8YYfv3lN7rzzjvrJfOVMfMuHs88/Ywmeg88OBE7d+5k9468lw7sP2jOSm3fHl9//Q3Gjx9X520sD8YYpk6ZiuDgEACAXq/Hxx9/UqXfV7/eevtt9OnTu1b3VHSwMgq3ETnrReNa7K6SY+QVG9iF1Ay278JlduDSZZaYnsUcEbnHHnscQYFB4JzD09MTer1eK92jptuqXwUFBbiSklLuy6nG4coXuYbhGVMf+JYtW9gLLzyvFYQeMeJeeHp6UlkDqPqzM2fPaFumdO3aBUGBQfWyDk215u6/736bAb+qg7/6bMPCwjDgbuds8VFr/Ht0rRSKIiM1NRXJycnae9GlcxenJ2kxxuDj40O9evbUEqWOHD1S7sSAiHD02DEYjUZIkoTg4GA0DQ+vkgBbjxHql+oidHF1qZcJiXnZRHOa9cVs7Wc/zvsR+/fvZ4wxXLlyhb355hvadQ4ZPATTp02n2io2URU45wgKCqKxY8eVmXRSUbax/VhARGjTug1u6n5TuUUDnIFjyShWLj/O1HV0VhVTKojR2eNIlzInnkTRqFFj4OriVuJH5wwxzWNx+tRJFBcXl7Lszp8/h4TEhDJbwgDirCyRs62B2VBQX8YNGzfguYzn4e/vj6CgILRp06bctXGcc1y4cAGFhYVwd3eHp6cXevTsgb/++qtWZ0vltT8qKlrbaDYrKwtPPf2UOb7qSNo9Y1AU807FvXr2gqIoGDlyJP5c8ac20RE4F6PRyNauXUtt27WDyWhCt27d4ebmVuXNQSuCc47evfvA3z9A2yD1zOnys4OJCCkpyezo0SPUqVNnuLm5YeiwYThw8ID2/xVRqWVdTyJHRHj1ldcQEhICxsx76b3yysvavpCMMXz9zdds2LBhdPPNt0CWZbz44n/x28LfKCur4jXGtY2iKOjatSuaNWsKALh06RJefuUlh93J6udee/V13HDDDZAkCUOHDcPOXTtrLVbnUDKKtlgc0Cr9q5mLJTMM59x7SZIQE9OcBg8ajOCgYBuR44zDw0OPtm3b4erVK5a6iGahOnbsKA4ePFDpvk6lK6OUZMk1JKEDzO3Jy8tDbl4uAgICAADBwcHltpOIcPbsWVy+fBktW7aEoigYNXIU1qxZU+eLTRljeOThh+Hl5QUA+Obbb7B8+TJW1Y584cJ52rRxM9zc3NCr160ID29Kly8nNawH1UggIsybPw/Tpk2Hh4cHWrdujdtvvx2rV692yvEZY3BxcaHx48ZB3RD17NmzuHDxQrl9Qu0vy5YvR6dOncEYw8T7J+K7776lpKSkBu3GLg/OOZ568ikaNnwYFFlBeno6JkwYb7OHoSp2E+6bgNWr1iAuLg6+vr5Yt3Y9hg0fSlevXq2XUmDq83hg4oPgXIKiKHjn3XewcuXKKr+TeXl5tHjREnDOMWTwYLz99luUl+ecusb2VKmos73IqfE5s3VX88YwxswVsAcNRkREZCmRU61Id707YmKaI65lS0RHR+PCxQvYsXNHpbtSl7gtYSNy2vU0MKsOMM+eFKsEgYrMeyLzHmDf//C99rOBAwehbZu2dToaqG7nBx54EESkZSICKOVurugLAE6cOMG2bt1qjs/4+uLpp5+uy0v5nyMxMZH9teovAOadN77/7gf4+/uTJElOOX7Hjp1w5513QZ0Yz5o9q8IixepSmfXr1yEzMxOyLMPPzw8zZsxskO9rZXDO0alTZ3rmmWchm8zLib77/jvsP7C/1IWYF8ins9def1X7vlWrVpjxwox62dNNpX379jRgwAAQERISE7B+/ToAVduaCgDi4+PZiRMnAABNmzbDIw8/UmvX5JjQqULDbEVOXU/HHTtMxedgDKGhoTRu7PgyRK7EVaqdUzK3ZevWeGzcuMGhPdsqTEThtffS1OS43t7eWjFbxhguJ12u0CIiIvz003wcP35cq/T+228L0a5dO6rpwODo73LOMWXyFC077vDhw0hISKjy+dRZ7dJlS7WZ5ITxExATE1Or/vz/VdT7/d1336K4uBiKosDd3R0ffPBhjURF/d2OHTvS/HnzoYrmmjWrsXLlykotE0VRcP78BbZ8+TJtQfvQe4Zi5MiRpB6/JtSVYKhLCT7+6GN4enqCc44tW7Zg9uxZFbrsNqzfwGbPng1JMltQY8aMdSi7sTZwcXHREsokSUJ8fDyys7OrfAPV8MPqNau1Zzp12jQEBATUSk6BA0Wd7Sqi2Imc+vOawBhDWGgYPfqfxxFoSTyx2SHBvuQYZ5BNMrZt24o1f6+Go+urys+2rN3KKABQ1Rmx2vH79umL0NBQcM5x+fJlHD12tMKBgYhQWFjI3nv/Xe3FCQkJwbwf58HX17faYseYYzU41V0KBg4cpCXF/LzgJ1Q3zsMYw2aryuceHh4YPGhw9WN0/y4DoM4hIuzbt499+qk5g44xhlEjR+Hbb78jdW1XVWGMITg4mH744UeEhJiz9DIyMvDW22/B0Qweo9GA555/jp07dw5EBG9vb3z37fcYPmw4ARV7OippXTV/r4pnsbzPn3z8KTp37myJPaZg8pRJyM3NrdCiNckmvPzKSyw+Ph4m2WTZ1mc+2rfvQNV5HtWFc47mzZtTz569tJj/woULq51hzDnH8uXLNC9PaEgoevboWSshFsd6B+M2ImMvcjWJ0UmShOjoaJow4T7o9e42CzjLsh4ZN2dL7di5HcuWLavS7tuq67I8kXNmrFHFz8+P3n33PerYoSOpOxhYt8GmfXbxwn79+tHLr7wCWZahKArmzJ3jUM1Hxhg2btyI777/TjtfbOwN2Ld3P6ZNnUZubm7arKmse6E+A/VYkiRhyJAhtHz5n9S9+00VzrgURcFN3W9CTEwMOOc4deoU1qxZU+3OqygKrl27xr76+isA5ozUoUOHVavwtZpVW96zd+bEpyrnqMn5rLOInXmODz78gP3ww/dQd6MfMXwEFi9aQh06dCjVdyq6dhcXF9x///20edMWxETHaIlJ/3l0Ov75558qrzV8/InHkZOTow2un3/+f/jvi/8l1RKwfofssW9vixYtSC0/RkS1njU7auQoGjRoEIgIOp0OH374AdLS0ip9IKql/eprr2hhDCLC22+9XacuTEVRcOedd6FJkyZgjGHbtm3Yv39fteOksizjzJkzbMkfS7QxZ/ToMQCcb2U7uHtByQ7jnHGUrnlZvRgd5xzRUdE0ZPA9FqtFKhl47axH1aozGY2Ij9+CxYsXo6io0PGzMosLlpd+8bUXwMk6p86GH3v0MWzatBm/L/ydevXqRZ6enqQO1PZfkiTBy8uLHn/scVrw8y/wa+IHxhhOnTqJ3xcudKgDEJm3vHnhhee1eB0RITAwEB988CEOHTyE8eMnkJeXF7m4uJBaQd9a5FxcXMjby5uGDh1K27fvoF8W/IpePXuhR48eFYoW5xyPPfa4ti3R9z98ZxNkrw5EhE8//QSZloXD3bp1Q9euXat8QFc3V7i5uZFer3f4y83NzeHzqM/Q3V1f5fPo9Xpyd3evxjW5Vflcas3R8lDjYjNfnMlWr16lWc+33347tmyOx0cffkRBQUHaxM3+HljK2FHXrt3o77/X0uxZcxAWFgYAKCgowNRpU7BmzZpqubt27drJJk+eBJPJBFmW4evrixkzZmJr/DYMGzac9Ho9lTUJsm5X8+bN6fPP/48O7D+INm3aaBmf3ElxSHtUi/aTTz6Fu7s7FEXBL78swLz585g6kXDk2o8cOcL+8+h07Xnceuut+Oijj50WP60MSZLw8EMPaff2s88/rfFehUSEt99+C8XFxQCA/v37IyYmxulTDsfsXlbiPrStkqJaWRxVVQgGhqZNm9LgwUMQERlpa8mV4yI1moxYv34dVq9eVaklx1B6glaWsKi7F6jZpc7SOYubjZ5++hltzV+/fneiX787kZSUhIsXL9KVKylIS09HcVERXN3c4Ofnh6bhTdGyZRzCw5tqpZGOHTuKKVOnIi09zWHB0GaBr76CM6dP46mnn0ZYaBhkWUZ4eFPMnTMXb735Fi5duojU1FTKzc2FyWSCm5s7PL08ERgQiIiICAQFBQEoWdzesUNH7frs28I5R5/efeiWW24BEeHatWvYsGFDmZ+t6r3Mz89nK1euoIkTHwAAvPvOexg4aAAZDIZK7wnnHHq9Hj98/6OWvu3oebdu24rHH3/MIVepJEm48cYbsVG7ZodOo50rvyAfffr0diid3xLvwS8LFsBkcmywBMyTvXXr1tHzzz9XoTWlVs6/f+L97NH/PEovv/wy9HoPmEwmTJ48BePHT8Dx48fozNmzSE5ORk52NnQ6HQICAxEdFY3Y2FjExcXBxcVF68d79+7F66+/hl27d7Hq9glFUbBu/To2cuS99P777+PGG1tZ+nQ45s+bj4SEBJw5c4YSExOQmpoKg8EAVzc3BAYEomnTcERFReOGG26ATqfT2lVUVIQvZn2BQ4cOOt1tZn5OTej7777XYu1nz57Fq6+9WuVjEREWL17MbrutN028fyIYY5j0yCTs2b2blvyxpFazMBljmDB+AsXG3gBFUXDq1CkcOHDAKcdOSkpiO3ftpL59+kKn0+GVV17F5MmTnLokyqHKKDbJIGVVRqmGRRccEkwTJtyPoMDAUjG5skTOZDJhw4b1WLdubYUiJ3EOPw93cndxQUZ+IQoNBqZ23VJCpwq06tJxormsxspemPE8vfbq64iOjtZmjmHhYWjWrFmZcTvVTWkpD4adO3fgoYcfwvXr16s1A87Ly2NffvUl1vy9hj779HP07NkT7u7uWvaan5+fjatSdQmpLlLGzBUbcnNz8fOCn/HB++9rn7NGnTRMnDjRfEvBcODAfiQkJNT4pqoWxvI//8R9990PWTahe/fu6NKlC/bu2QtTOVX/zW0kq00+A8tse3nodDr4WganytqnkDk7lnOOsLDwKos751zbbbrik5nPp15TUFCw1gZHkCTJ4ZqO6mRpztw5bPGSxfTN19/g5ptvgbu7O9zd3dGtW3fcckuPMn/PaDRq15KXl4e5X87F559/VmGGpaMQEeK3xrObb7kZ77/3Pt13333w9PSCoiho2rQpIiIiyn23TCaT9n9FRUXYuHEDnn3uWVy9epU55i4zx8zUKXFFl6Ieb8KECejZs5d2T1559WWkp6dX+T6oCSDvvfcuRo8aDVdXV5hMJrz66mtYtXoV1dRzUh6cc3h4eNDkyZO1OpwbNm5AVlaWU56lLMtYvmwZ7rj9DhQXF+Pu/ncjNjaWzp07V654qzvimN8DqnRS6eCCcbtsS+ulBRa3pqMwxhASEkrTpk2Hl5eXlSVXdkYnY+aY3PYd27F69apy91djACL8fWlop1aICfSHTpJgkGXsOpdI606cgYlsF4Yzmy161P9zbiafoihYtWoVi4+Pp86du+C2W2/FzTffgri4OAQEBGiDkzqgAEBxcTHOXziP3bt2YfWaNdi+fVuV4pD2qMdOSEhgI+4djs6dO1PfPn3Rs2cvtGvXDoGBgaUGZQIhPz8f58+fx9FjR7F1azz279+PxMTECtvRpEkTkhUFmzZuBGMcs2bPhqOuGUeuY8+e3Vj+53L4+fmBFELLli2xc+fOcj+fn5+PTZs2V3s/Nc4Yzpw5U+nn0tPSEL8lvkb7tjEwFBQWQJblChMTcvPysGnzpmon43DGcd6S0OEIav+5fv06GzN2DHXo0AG9b+uN23r3RqsbWyEgIECrrQqY3y+DwYCkpCQcOXIEGzdtwPZt25GQmMCqm7RQFur1v/TyS+zHeT/Sbbfdhtv73oH27dvbFEVX20Rkrpx08eJFnDhxHDt37sTefXtx9uxZpiZNVdY2S0gAW+PNJcWMRgPy8ireISQyMpL69umLLfFbwACsX78ea9eurfb7LMsyrly5wgYMvJv+++JLZtFmwMwZM/HmW2+iov04qwuRuTLR5eRkpKWlAwB+cXLd2dVrVmPQ33/DxUUHRSE0b9683HePyLxkKX5rPIxGI3JyclBcXFThc2Be3p4VNiA4OJjuu28iYmNjyxQ7ziVcvXoFX331JRLLqUqiwjlHZGQkjRhxL8LDm2oiV3JMpm0DpJ5LlmXs2r0Lixb9jsLC8rMrm/n50MO9usDHQw/rCigAcCLlGtYeP4tPpt6PMP8m4Nw6PlYifonX0/DyvEU4mZjs1Eioenz15XRxcUF4eDhFRESgSZMmcHFxRXFxMVJTr+P8+fPIzMxkqhXjzMEBgE0FCp1Oh6ioKIqJjoGnlxcUxVyp4sqVq0hKSkRhYUkMtLzKFYL/Hez7saurKyIjIykyMhI+3j4wmozIysrCuXPncO3atTrrO/Z9ulmzZhQdHYMmTXyhyAryCwqQkpKMxMRE5OeXFJAvr/h7bVNTV76gNJXdU4eLOltnWXKbGJ1FMBxoSFRUFA0aNKQckStJhlDPZzKZsG3bVixbvtRm0LWHM4ahnVrDR+8O2zJf5r/bNQuDTpLg4eZqtXuB7aJxSyMdSvaoKqpYqcc2Go1ITExkSUlJ5X7OekBxJuoxVXfwhQsX2MWLF23aYP232oEcbYv1/auNl9n++VR2Dmc8T0euw1n9pq7OVZ1nY9+PDQYDzp8/z86fP6/9zPq4Ve071cW+TyckJLCEhIRSfdG67dbu36pS1T5e1T5bnXY487iOnK+23+2q3tfKPu/YNj1lxOjUJBTVEqtM6cLDw+meIUNtEk/KFjmzeJpMJqzfsK5Cd6WKr4c7xQb5a0JlLXLqv9tFhMHD1VXLELVJRlH/XQsiZ42Ne7ACS60uZnvWglbR+aoTR6hNGlp76vo8dX2uys5vPzEq73N1gX1baqtNDaUP1tf9bSjHr8rnK4/RsYosupIMzIoICgqiifc/iIDAgFIiZyM4lmPKsgmbNm3E2rV/VypyDIDeRQedJEG2zNjKW0Jg/3P7NWTOTEYRCAQCQcPAIYvOvjJKyTKAku17yjLpzIknITR50lT4NvEtU+Rst/zhkGUTdu7aib9WrazQXalCADLzi1Asm+AiSWWLXBk7itd1ZRSBQCAQ1A+VlwCDdfFj+7VudoutrQ/MOSIjImnsmHF2IsfKFzlFxu49e7BkyWKHRE6l0GhkO84mgsqoEsEtWwipFltFIifETiAQCBoflefTM5TE4spY0K25H61/hVl2IRg8BM2aRdiV9TKLXWlLTsbWrfFYtGihw7UrrVl/4iyOJV2BQrZLCLSLAGyEuZR1V4tFnQUCgUBQfzicjFJ+1qW62LhEJEJCQmjoPcMQGRkFLlm5KzVrzlbkTLIJGzdswOo1q6olcgCQX2xgKw6dJAVA5+hmcJE4zCvCmM1aQOsvNYVftUiF0AkEAkHjw/GsSyuRssm6ZAzW9lxAQCA9/NAk+Af428bk7GN8lmPJsowtmzfj77Vrqi1yKul5+WzFwROkd3VBm6ahKKkniZLYHYDr11ORnJyCYkMxXFxcEBYaisjICCF0AoFA0AhxfONVLUZnmyFpdmuavw8NCaWpU6bC398xkVNkGXv27MbKv1bAGTvLEoCM/EL2685DuJSeaWk7tHqWjDGcu3ARx0/8g+ycbBQXF5srgFy4iOMnTsBocH5VAYFAIBDULw7E6EqSTqxjXNaluiSJI6JZBEaPHgN//wC7mFwZ2ZqMgRQFe/fuwaLFv9fYkrMnu7CIfbtpN85cTS1JUOEMqWnpSExMshRvtv4DZGZm4cqVK/W+RkkgEAgEzsXBrMuyRU6Ne3l4eOC2W3sjIjLKRuRsYnlWiSyKrGDr1i34fdFCm5I8ziS7sIjN27oXhxOStQSV5OSUctfYkULIys5BcbGhNpojEAgEgnrCsRJg1gWc7XYvkE0mFOQXwM/fDwzMJsmktLvSLHIbN23AmtWra03kVDLzC9nSfUeJMYausZEwFBeX2qiSc64tOzAYCmEyCfelQCAQNCYc2r1AXRReUkfSInKyjJSUZJhMsl11E1u3pSpypBDit27BmjWrkZdf85icI6Rm57LFuw+Rp7sbmvl42lpzViLHGUNuUREKRZxOIBAIGhWO7UvDrMpqWWJ1JqMRV1JSyhc5u612FFnBnr17sGLFn05JPHEUApCWm89+2LwLV7LzzJuxask1VksNGENCWhayCyouOSYQCASCfxeOLRhnJcsJOGMwGA1ITb2ubSRYochxsyW3b/9eLKrFmFxlZOQVsG+37MbZa+laTUzrGpdnr6Zi34VEFJvK3sRTIBAIBP9OHK91yRkABqPRiPT0dBQVF5cWOV4S91K/VxQF27ZuxfI/l9WbyKlk5BWwX3Ydop5x0bghJBA+ej2KTEYkpGVh3/kEJKRlCmtOIBAIGhkOJqOY19DJJhNSU1NRbCi2SzxhZYocKYTNmzdh1aq/6l3kVLILi9j642ex90IS6V1cYJBlZBcUoshoahDtEwgEAoFzcbgyiqLISE5OhiybbEp4qckpZYnc9u1bsWrVX3Uak3MEoywjLbdhCK9AIBAIahcH9qMDTCYTkpOTYZJNpRZ+Wy8c19yVsoIDB/Zj2fJlDU7kBAKBQPC/RaXJKESErKwsyLJsW/2f24qcdaHk/Qf2YeHvvwmREwgEAkG9U6lFJ8syTEbz2rKKRI4zDiLCtm3mxBMhcgKBQCBoCDgkdApRqV3B7dfJERG2bNmMv1atFCInEAgEggZDpUKXl5eHgvz88mNyjIFA2LVrp9N2IRAIBAKBwFlUGqMrKipiJ0+dREFhgbaMwDomp5CCAwcO4I+lfwiREwgEAkGDw6ESYAcO7MeePbuRm5tr3paHS5C4hPyCfOzbuw+/L/wNubk5QuQEAoFA0OBgXt6eDn3Q1dUVbdq0oZiY5vDx8UFhYSESExNw+PARFBY6dz85gUAgEAichcNCpyLpdJA4h6IokGUTxD6lAoFAIGjIOFQZxRrZZIJcGy0RCAQCgaAWcGybHoFAIBAI/qUIoRMIBAJBo0YInUAgEAgaNULoBAKBQNCoEUInEAgEgkbN/wPguySv1M0OQwAAAABJRU5ErkJggg==" alt="ScaleLogix AI">
       </div>
-      <div class="sys-head-tag">Active from Day 1</div>
+      <div class="topbar-badge">System Live</div>
     </div>
-    <div class="sys-card-body">
-      <p class="sys-desc">ICAS is ScaleLogix's proprietary AI-powered outreach and client acquisition engine — a shared infrastructure designed to support new agency partners during the critical early launch phase. While your dedicated systems come online, ICAS introduces qualified opportunities sourced from ScaleLogix's own outbound channels directly into your pipeline.</p>
-      <p class="sys-desc" style="margin-bottom:24px;">ICAS represents the operational bridge between your launch date and full independence. It is a launch accelerator, not a long-term primary channel — and it is designed specifically to prevent the quiet first 30–45 days that agencies without this infrastructure typically experience.</p>
 
-      <div style="font-size:13px; font-weight:700; color:var(--black); margin-bottom:12px; letter-spacing:-.01em;">How ICAS Works</div>
-      <div class="sys-items">
-        <div class="sys-item">
-          <div class="sys-dot rose"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,2.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="sys-item-text"><strong>Shared outbound channels generate early deal flow.</strong> Active source channels may include LinkedIn outreach, cold email campaigns, Facebook lead generation, marketplace platforms such as Upwork, and additional channels as they are developed and tested. Channel availability varies based on market conditions and operational capacity.</div>
-        </div>
-        <div class="sys-item">
-          <div class="sys-dot rose"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,2.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="sys-item-text"><strong>ScaleLogix's internal team handles initial qualification.</strong> Inbound interest generated through ICAS channels is processed by ScaleLogix's B2B operations team, which conducts initial qualification conversations where applicable. Prospects that meet criteria are then routed to agency partners based on niche alignment and availability.</div>
-        </div>
-        <div class="sys-item">
-          <div class="sys-dot rose"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,2.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="sys-item-text"><strong>Early outreach starts light and builds over time.</strong> ICAS outreach is intentionally conservative during system warm-up. Aggressive early output degrades deliverability and platform standing — patience in this phase produces compounding returns.</div>
-        </div>
-        <div class="sys-item">
-          <div class="sys-dot rose"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,2.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="sys-item-text"><strong>Supporting resources are included.</strong> ICAS comes with sales frameworks and discovery guidance, proposal and pricing references, and diagnostic tools used in prospect conversations — resources designed to help you convert opportunities effectively from the start.</div>
+    <!-- HERO -->
+    <div class="hero" id="hero-section">
+      <div class="hero-eyebrow">Infrastructure Confirmed · Go-Live Portal</div>
+      <h1 class="hero-headline">
+        Your AI company<br><span>is live.</span>
+      </h1>
+      <p class="hero-sub">
+        Everything has been built, deployed, and verified. This is the moment you step into ownership. Confirm go-live to unlock your launch resources.
+      </p>
+    </div>
+
+    <!-- CONFIRMATION FORM -->
+    <div class="card" id="confirm-card">
+
+      <!-- MILESTONE PROGRESS -->
+      <div class="milestone-strip">
+        <div class="milestone-step done">Onboard</div>
+        <div class="milestone-step done">Build</div>
+        <div class="milestone-step active">Go-Live ✦</div>
+        <div class="milestone-step">Scale</div>
+      </div>
+
+      <!-- IDENTITY FIELDS -->
+      <div class="section-label">Your Information</div>
+      <div class="field-group">
+        <div class="field-row">
+          <div>
+            <label class="field-label" for="field-name">Full Name</label>
+            <input class="field-input" type="text" id="field-name" placeholder="Jane Smith" autocomplete="name">
+            <div class="field-error" id="err-name">Please enter your full name.</div>
+          </div>
+          <div>
+            <label class="field-label" for="field-company">Company Name</label>
+            <input class="field-input" type="text" id="field-company" placeholder="Acme Corp" autocomplete="organization">
+            <div class="field-error" id="err-company">Please enter your company name.</div>
+          </div>
         </div>
       </div>
-
-      <div class="sys-fine">ICAS is a launch accelerator. It is not designed to be your primary long-term acquisition channel. As your agency scales, you are expected to operate and invest in your own marketing and outreach infrastructure — which is exactly what the APEX Lead Engine is built to power.</div>
-    </div>
-  </div>
-
-  <!-- APEX CARD -->
-  <div class="sys-card">
-    <div class="sys-card-head purple">
-      <div>
-        <div class="sys-head-label">Core System 02 &nbsp;·&nbsp; Your Dedicated Infrastructure</div>
-        <div class="sys-head-title">APEX Lead Engine</div>
+      <div class="field-group" style="margin-bottom:24px;">
+        <label class="field-label" for="field-email">Email Address</label>
+        <input class="field-input" type="email" id="field-email" placeholder="jane@acmecorp.com" autocomplete="email">
+        <div class="field-error" id="err-email">Please enter a valid email address.</div>
       </div>
-      <div class="sys-head-tag light">Activates Month 1–2</div>
-    </div>
-    <div class="sys-card-body">
-      <p class="sys-desc">The APEX Lead Engine is your agency's own dedicated client acquisition infrastructure — built and operated entirely within your CRM environment. Where ICAS draws from ScaleLogix's shared channels, APEX generates opportunities specifically for your business. It is the foundation of your independent, long-term acquisition strategy.</p>
 
-      <div class="sys-grid">
-        <div class="sys-cell">
-          <div class="sys-cell-label">ICAS vs. APEX</div>
-          <div class="sys-cell-text">ICAS distributes from shared ScaleLogix channels. APEX runs inside your own CRM and generates opportunities exclusively for your agency. They are complementary — not competing.</div>
+      <div class="divider"></div>
+
+      <!-- TERMS ACCORDION -->
+      <div class="terms-accordion">
+        <button class="terms-toggle" id="terms-btn" onclick="toggleTerms()">
+          <span>Go-Live Terms &amp; Conditions — Read Full Agreement</span>
+          <span class="terms-arrow">▼</span>
+        </button>
+        <div class="terms-body" id="terms-body">
+          <div class="terms-inner">
+
+            <p>I confirm that my ScaleLogix infrastructure build has been completed, that my systems have been provisioned and configured, and that my environment is live and operational.</p>
+
+            <p>I understand that go-live confirmation constitutes my acknowledgment that the infrastructure deployment phase has been completed in accordance with my executed Infrastructure License &amp; Operations Agreement. I have had the opportunity to review my environment and raise any concerns prior to confirming go-live status.</p>
+
+            <p>I understand that all implementation fees and related charges reflect agreed consideration for the delivery of licensed infrastructure and implementation services, which have now been completed. I have no current unresolved disputes regarding the implementation or deployment of my infrastructure.</p>
+
+            <p>I confirm that I have reviewed the ScaleLogix post-launch client guide. I understand that this guide is provided for informational purposes only and reflects general practices and common approaches used by ScaleLogix clients following infrastructure go-live. It does not constitute a promise, guarantee, or representation regarding my specific results, outcomes, or business performance.</p>
+
+            <p>I understand that ongoing advisory services are provided under the terms of my executed Infrastructure License &amp; Operations Agreement and that this guide does not modify, supplement, or create any new obligations under that agreement.</p>
+
+            <p>I understand that business outcomes following go-live — including revenue, client acquisition, and operational performance — depend on my own execution, market conditions, and factors outside ScaleLogix&#39;s control. ScaleLogix makes no representation that infrastructure deployment or advisory support will produce any specific business result.</p>
+
+            <div class="terms-section-head">1. Go-Live Confirmation</div>
+            <p>I confirm that my ScaleLogix infrastructure build has been completed, that my systems have been provisioned and configured, and that my environment is live and operational. I understand that by submitting this confirmation I am acknowledging that the build and deployment phase of my engagement with ScaleLogix is complete and that no further build obligations are outstanding.</p>
+
+            <div class="terms-section-head">2. 30-60-90 Day Growth Roadmap Acknowledgment</div>
+            <p>I confirm that I have reviewed the ScaleLogix 30-60-90 Day Growth Roadmap. I understand that this guide is provided for informational purposes only and reflects general practices and common approaches used by ScaleLogix clients following infrastructure go-live. It does not constitute a promise, guarantee, or representation regarding my specific results, outcomes, or business performance. The roadmap is a directional resource; actual results depend entirely on my own execution, market conditions, offer quality, and other factors outside ScaleLogix's control. Nothing in the 30-60-90 Day Growth Roadmap creates any obligation on ScaleLogix beyond what is expressly set forth in my executed Infrastructure License &amp; Operations Agreement.</p>
+
+            <div class="terms-section-head">3. Ongoing Advisory Services</div>
+            <p>I understand that ongoing advisory services are provided under the terms of my executed Infrastructure License &amp; Operations Agreement and that the post-launch guide does not modify, supplement, or create any new obligations under that agreement.</p>
+
+            <div class="terms-section-head">4. Acknowledgment of Deployment Completion</div>
+            <p>I understand that go-live confirmation constitutes my acknowledgment that the infrastructure deployment phase has been completed in accordance with my executed Infrastructure License &amp; Operations Agreement. I have had the opportunity to review my environment and raise any concerns prior to confirming go-live status.</p>
+
+            <div class="terms-section-head">5. No Guaranteed Outcomes</div>
+            <p>I understand that business outcomes following go-live — including revenue, client acquisition, and operational performance — depend on my own execution, market conditions, and factors outside ScaleLogix's control. ScaleLogix makes no representation that infrastructure deployment or advisory support will produce any specific business result.</p>
+
+            <div class="terms-section-head">6. Implementation Fees &amp; No Disputes</div>
+            <p>I understand that all implementation fees and related charges reflect agreed consideration for the delivery of licensed infrastructure and implementation services, which have now been completed. All such fees are final, non-refundable, and not subject to chargeback or reversal on the basis that desired business outcomes were not achieved. I represent and warrant that I have no current unresolved disputes regarding the implementation or deployment of my infrastructure, and that submission of this confirmation constitutes my acknowledgment that implementation has been delivered in full.</p>
+
+            <div class="terms-section-head">7. Intellectual Property</div>
+            <p>All systems, frameworks, workflows, templates, methodologies, and underlying infrastructure components delivered by ScaleLogix remain the exclusive intellectual property of ScaleLogix AI and its licensors. Client is granted a limited, non-exclusive, non-transferable license to use the deployed environment for its own internal business purposes only. Nothing in this confirmation transfers ownership of any ScaleLogix IP to Client.</p>
+
+            <div class="terms-section-head">8. Confidentiality</div>
+            <p>Client acknowledges that all information shared by ScaleLogix during the build and deployment process — including systems architecture, operational frameworks, vendor relationships, pricing structures, and internal processes — constitutes confidential and proprietary information. Client agrees not to disclose, replicate, or use such information outside of its own operational use of the deployed environment.</p>
+
+            <div class="terms-section-head">9. No Modification of Agreement</div>
+            <p>This go-live confirmation does not modify, amend, or supersede the terms of the executed Infrastructure License &amp; Operations Agreement. In the event of any conflict between this confirmation and the executed agreement, the terms of the executed agreement shall control.</p>
+
+            <div class="terms-section-head">10. Record of Acceptance</div>
+            <p>Client acknowledges that this electronic acceptance constitutes a legally binding confirmation. ScaleLogix records the date, time, IP address, and identifying information provided at the time of submission as evidence of acceptance. This record is maintained by ScaleLogix and may be produced in any proceeding relating to the services.</p>
+
+            <div class="terms-section-head">11. Limitation of Liability</div>
+            <p>To the fullest extent permitted by applicable law, ScaleLogix's total liability arising out of or related to the infrastructure deployment, advisory services, or this go-live confirmation shall not exceed the total fees paid by Client for implementation services in the twelve (12) months preceding the event giving rise to the claim. ScaleLogix shall not be liable for any indirect, incidental, consequential, special, or punitive damages of any kind, regardless of the theory of liability and whether or not ScaleLogix has been advised of the possibility of such damages.</p>
+
+            <div class="terms-section-head">12. Indemnification</div>
+            <p>Client agrees to indemnify, defend, and hold harmless ScaleLogix AI, its officers, directors, employees, contractors, and agents from and against any claims, liabilities, damages, judgments, awards, losses, costs, or expenses (including reasonable attorneys' fees) arising out of or relating to Client's use of the deployed infrastructure, Client's business operations, or Client's breach of any representation made in this confirmation or in the executed Infrastructure License &amp; Operations Agreement.</p>
+
+            <div class="terms-section-head">13. Dispute Resolution &amp; Governing Law</div>
+            <p>Any dispute arising out of or relating to this confirmation or the underlying services shall first be subject to good-faith negotiation between the parties. If not resolved within thirty (30) days, disputes shall be resolved by binding arbitration administered by the American Arbitration Association (AAA) under its Commercial Arbitration Rules, with proceedings conducted in Miami-Dade County, Florida. The arbitrator's decision shall be final and binding, and judgment may be entered in any court of competent jurisdiction. This confirmation and all disputes hereunder shall be governed by the laws of the State of Florida, without regard to conflict of law principles, consistent with Section 17 of the executed Infrastructure License &amp; Operations Agreement.</p>
+
+            <div class="terms-section-head">14. Severability</div>
+            <p>If any provision of this go-live confirmation is found to be invalid, illegal, or unenforceable under applicable law, such provision shall be modified to the minimum extent necessary to make it enforceable, or severed if modification is not possible, without affecting the validity or enforceability of the remaining provisions. The remaining provisions shall continue in full force and effect.</p>
+
+            <div class="terms-section-head">15. Electronic Signature &amp; Legal Validity</div>
+            <p>This go-live confirmation is executed electronically. By clicking "Activate," Client agrees that such action constitutes a valid electronic signature with the same legal force and effect as a handwritten signature, pursuant to the Electronic Signatures in Global and National Commerce Act (E-SIGN Act, 15 U.S.C. § 7001 et seq.) and applicable state electronic transactions laws. Client expressly waives any right to contest the validity or enforceability of this confirmation on the basis that it was executed electronically rather than in writing. The electronic record of this acceptance, including all metadata captured at the time of submission, constitutes an original signed document for all legal purposes.</p>
+
+            <div class="terms-section-head">16. Representation of Authority &amp; Identity</div>
+            <p>By submitting this confirmation, the individual completing this form represents and warrants that: (a) the name, company name, and email address provided are accurate, complete, and belong to the person submitting this form; (b) such individual has full legal authority to act on behalf of the named company and to bind the company to the terms of this confirmation and the underlying Infrastructure License &amp; Operations Agreement; (c) the company is a validly existing legal entity with capacity to enter into binding obligations; and (d) no authorization, approval, or consent of any other person or entity is required in connection with the execution and performance of this confirmation that has not already been obtained. ScaleLogix is entitled to rely on these representations without independent verification. Any misrepresentation of identity or authority shall constitute a material breach and shall not affect the binding nature of this confirmation on the company on whose behalf the submission was made.</p>
+
+            <div class="terms-section-head">17. Non-Repudiation</div>
+            <p>Client acknowledges and agrees that the electronic record of this acceptance — including the name, company, email address, IP address, browser fingerprint, user agent string, server-captured timestamp, and unique acceptance identifier generated at the time of submission — constitutes conclusive evidence of Client's agreement to these terms. Client expressly agrees that it shall not assert, and hereby waives any right to assert, that this confirmation is invalid, unenforceable, or not binding on the grounds that: (i) Client did not personally complete the submission; (ii) the submission was made by an employee, agent, or representative without specific authorization; (iii) Client was unaware that the submission constituted a binding agreement; or (iv) Client did not read or review the terms prior to submission. In any proceeding in which the enforceability of this confirmation is at issue, the burden of proof shall rest with Client to establish by clear and convincing evidence that the acceptance was not authorized. ScaleLogix's production of the electronic acceptance record shall be presumptive evidence of valid execution, and Client shall not challenge the authenticity or integrity of such records absent affirmative evidence of tampering or system error on ScaleLogix's part.</p>
+
+
+            <div class="terms-section-head">18. Communications &amp; External Materials Disclaimer</div>
+            <p>Client acknowledges that ScaleLogix communicates across multiple channels, including email, Slack, video conferencing, social media, and third-party platforms. No statement, representation, projection, or commitment made through any informal channel — including email, Slack messages, social media posts, video content, or verbal communication in any meeting — constitutes a binding contractual obligation or modification to any executed agreement. Binding obligations arise exclusively through fully countersigned written agreements. Client agrees that communications via informal channels, regardless of their content or the seniority of the ScaleLogix team member involved, shall not be relied upon as enforceable commitments.</p>
+            <p>Automated email campaigns, sales outreach sequences, and LinkedIn or social media communications distributed on behalf of ScaleLogix are generated from general-audience templates and may not reflect current pricing, availability, or service specifics applicable to Client's engagement. ScaleLogix is not bound by representations made in such campaigns, and Client's receipt of such communications does not modify the terms of any executed agreement.</p>
+
+            <div class="terms-section-head">19. Meeting Recordings &amp; AI Note-Taking Tools</div>
+            <p>ScaleLogix conducts meetings via Google Meet, Zoom, and similar video conferencing platforms. Such meetings may be recorded by ScaleLogix for internal quality assurance, training, and operational documentation. ScaleLogix may deploy AI-assisted note-taking and transcription tools including but not limited to Fathom, Otter.ai, Fireflies.ai, and similar services. By participating in any ScaleLogix meeting, Client consents to ScaleLogix's recording and use of such tools.</p>
+            <p>Client acknowledges that: (a) AI-generated transcripts and summaries produced by ScaleLogix's tools are automated outputs that may contain errors, omissions, or misattributions and do not constitute verbatim records; (b) all meeting recordings, transcripts, and AI-generated summaries produced by ScaleLogix are internal operational documents only and do not constitute binding agreements, scope modifications, deliverable commitments, or amendments to any executed agreement, regardless of content; (c) any commitment, scope change, pricing adjustment, or service modification discussed in a meeting must be confirmed through a countersigned written amendment to be legally enforceable; and (d) ScaleLogix assumes no liability for data handling, accuracy, or confidentiality of content processed by third-party AI note-taking platforms.</p>
+            <p>Client Recording and Third-Party Tools. Client may not record, transcribe, screenshot, or otherwise capture any ScaleLogix meeting — in whole or in part — by any means, including personal devices, browser extensions, or AI-assisted tools (including but not limited to Fathom, Otter.ai, Fireflies.ai, or any equivalent service), without ScaleLogix's prior written consent in each instance. ScaleLogix's own use of recording or transcription tools in a session does not constitute consent to Client's recording of that same session. If Client uses any recording or transcription tool in any ScaleLogix meeting, whether authorized or not, Client acknowledges and agrees that: (a) any resulting recording, transcript, clip, or summary is for Client's strictly internal use only and may not be shared with any third party, published, or submitted in any proceeding without ScaleLogix's prior written consent; (b) such materials are not admissible as evidence of any commitment, obligation, price agreement, timeline representation, or binding promise by ScaleLogix or any of its personnel; (c) no statement captured in any recording or transcript — including statements by ScaleLogix officers, employees, contractors, or representatives — modifies, supplements, or creates any obligation under or outside of any executed written agreement; and (d) AI-generated transcripts are automated outputs subject to error and do not constitute a verbatim or authoritative record of any meeting. Client is solely responsible for ensuring that any recording or transcription tool Client deploys complies with all applicable federal, state, and local laws governing recording consent and electronic surveillance, including all-party and two-party consent requirements where applicable. Client agrees to defend, indemnify, and hold harmless ScaleLogix AI and ScaleMethods Partners LLC from any claims, losses, or liabilities arising out of Client's recording of any meeting, whether authorized or not.</p>
+
+            <div class="terms-section-head">20. Marketing &amp; Advertising Materials; Pricing Disclaimer</div>
+            <p>ScaleLogix produces and distributes marketing and educational content across multiple channels, including PDF resources, LinkedIn, YouTube, Meta advertising platforms, email campaigns, and its website. All such materials are for general informational purposes only. Pricing, rates, package structures, and service inclusions referenced in any marketing material — including any PDF, social media post, advertisement, video, or promotional email — are subject to change at any time and may not reflect current offerings.</p>
+            <p>Client expressly acknowledges that historical marketing materials, including any content shared prior to the execution of Client's Infrastructure License &amp; Operations Agreement, may display rates, timelines, or service structures that are no longer in effect. ScaleLogix is not bound by pricing or commitments appearing in marketing materials, and no marketing content forms part of or supplements any executed agreement. Only pricing confirmed in a fully executed Order Form at the time of signing is binding.</p>
+            <p>Any reference to client outcomes, revenue figures, lead volumes, or business results in ScaleLogix marketing content is illustrative only and is not representative of typical or guaranteed results. Client has not relied on any such representations in executing this confirmation or any underlying agreement.</p>
+
+            <div class="terms-section-head">21. Sales Personnel; Unauthorized Representations</div>
+            <p>ScaleLogix's sales, business development, and account management personnel are not authorized to make binding commitments on ScaleLogix's behalf through verbal communication, messaging platforms, social media, or email alone. ScaleLogix maintains internal compliance guidelines governing the conduct of its sales personnel. Where ScaleLogix becomes aware that a team member has made representations inconsistent with current offerings or these guidelines, ScaleLogix undertakes commercially reasonable efforts to correct such representations. However, ScaleLogix is not bound by any unauthorized representation, regardless of when it was made, by whom, or through what channel, and Client's reliance on such representations does not create an enforceable obligation against ScaleLogix.</p>
+            <p>Client agrees that in any dispute, only the terms of Client's fully executed written agreement shall constitute evidence of ScaleLogix's contractual obligations, and that verbal commitments, email representations, social media communications, and meeting discussions shall not be admissible as evidence of binding promises by ScaleLogix.</p>
+
+            <div class="terms-section-head">22. Project Management Tools; Notion &amp; Progress Trackers</div>
+            <p>ScaleLogix may provide Client access to project management and collaboration tools, including Notion-based agency progress trackers, client dashboards, and shared workspaces, as an operational convenience. Content appearing in any such tool — including task lists, milestone dates, estimated timelines, project phases, deliverable descriptions, and status indicators — is directional and informational only. It does not constitute a binding deliverable schedule, guaranteed completion date, or enforceable scope commitment. Project tools reflect current planning as of their last update and are subject to change without notice. Comments and communications made within project tools by ScaleLogix team members are operational in nature and do not modify any executed agreement.</p>
+
+          </div>
         </div>
-        <div class="sys-cell">
-          <div class="sys-cell-label">What APEX Does</div>
-          <div class="sys-cell-text">Targeted outbound sourcing, automated email sequences, AI-assisted response handling, and CRM-based follow-up workflows — all working to convert engagement into booked discovery calls for your team.</div>
-        </div>
       </div>
 
-      <div style="font-size:13px; font-weight:700; color:var(--black); margin-bottom:12px; letter-spacing:-.01em;">What's Included in APEX</div>
-      <div class="sys-items">
-        <div class="sys-item">
-          <div class="sys-dot purple"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,2.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="sys-item-text"><strong>Targeted outbound lead sourcing.</strong> Lists are researched and curated based on your niche, positioning, and ideal client profile.</div>
-        </div>
-        <div class="sys-item">
-          <div class="sys-dot purple"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,2.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="sys-item-text"><strong>Automated email outreach sequences.</strong> Multi-step, personalized outreach campaigns deployed from within your infrastructure — running continuously in the background.</div>
-        </div>
-        <div class="sys-item">
-          <div class="sys-dot purple"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,2.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="sys-item-text"><strong>AI-assisted response handling.</strong> As prospects engage with outreach, the system responds intelligently, nurtures conversations, and moves interested leads toward a booked call — without requiring manual input on every exchange.</div>
-        </div>
-        <div class="sys-item">
-          <div class="sys-dot purple"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,2.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="sys-item-text"><strong>CRM-based follow-up workflows.</strong> Structured, automated follow-up sequences ensure no opportunity falls through the cracks — from initial engagement to booked discovery call.</div>
-        </div>
+      <!-- CHECKBOX -->
+      <label class="checkbox-row" for="agree-check">
+        <input type="checkbox" id="agree-check" onchange="updateBtn()">
+        <div class="custom-check"><span class="check-mark">✓</span></div>
+        <span class="checkbox-label">
+          I have read and agree to the Go-Live Terms &amp; Conditions. I confirm the information above is accurate and understand this constitutes a binding electronic acceptance.
+        </span>
+      </label>
+
+      <!-- SUBMIT -->
+      <button class="btn-submit" id="submit-btn" onclick="handleSubmit()" disabled>
+        Activate →
+      </button>
+
+      <!-- FOOTER NOTE -->
+      <div class="footer-note">
+        Your acceptance is recorded with a timestamp and IP address.<br>
+        A confirmation copy will be sent to the email address you provided.<br><br>
+        Questions? <a href="mailto:contact@scalemethods.com">contact@scalemethods.com</a>
       </div>
 
-      <div class="sys-fine">APEX is actively enhanced on an ongoing basis. Upcoming developments include expanded outbound channels, automated prospect qualification, and integrated calling workflows for follow-up on active leads. As your agency scales, most partners layer additional channels — paid acquisition, LinkedIn, partnerships, and niche-specific outbound — on top of the APEX foundation.</div>
     </div>
+
+    <!-- SUCCESS SCREEN -->
+    <div class="success-screen" id="success-screen">
+      <div class="success-badge">⚡</div>
+      <div class="success-headline">You're officially live.</div>
+      <p class="success-sub">
+        Go-live confirmed. Your acceptance has been recorded. Everything you need to hit the ground running is below.
+      </p>
+
+      <div class="success-links">
+        <a href="ScaleLogix_30_60_90.html" class="success-link">
+          <div class="success-link-icon" style="background:rgba(123,108,246,0.15);">📅</div>
+          <div class="success-link-text">
+            <div class="success-link-title">Your 30-60-90 Day Roadmap</div>
+            <div class="success-link-desc">Milestones, expectations, and your first 90 days</div>
+          </div>
+          <span class="success-link-arrow">→</span>
+        </a>
+        <a href="#" class="success-link" id="link-video">
+          <div class="success-link-icon" style="background:rgba(201,137,106,0.15);">▶</div>
+          <div class="success-link-text">
+            <div class="success-link-title">CRM Intro Video</div>
+            <div class="success-link-desc">How to access and navigate your CRM</div>
+          </div>
+          <span class="success-link-arrow">→</span>
+        </a>
+        <a href="ScaleLogix_Marketing_Deck.html" class="success-link">
+          <div class="success-link-icon" style="background:rgba(74,222,128,0.1);">📊</div>
+          <div class="success-link-text">
+            <div class="success-link-title">Your Marketing Programs</div>
+            <div class="success-link-desc">Overview of your active ScaleLogix programs</div>
+          </div>
+          <span class="success-link-arrow">→</span>
+        </a>
+        <a href="#" class="success-link" id="link-typeform">
+          <div class="success-link-icon" style="background:rgba(255,255,255,0.05);">✍️</div>
+          <div class="success-link-text">
+            <div class="success-link-title">Launch Feedback Survey</div>
+            <div class="success-link-desc">Share your initial experience with our team</div>
+          </div>
+          <span class="success-link-arrow">→</span>
+        </a>
+      </div>
+
+      <div class="success-timestamp" id="success-timestamp"></div>
+    </div>
+
   </div>
 
-  <div class="warm-box">
-    <div class="warm-title">Why Activating an Acquisition Channel in Month 1 Matters</div>
-    <div class="warm-text">ICAS runs in the background from Day 1. But partners who activate at least one additional acquisition channel — LinkedIn Outreach or a Lead Acquisition package — in Month 1 consistently see faster deal flow, shorter ramp periods, and clearer market feedback. This is not required. But it significantly closes the window of a quiet early phase. The optional programs described in Phase Two are available to activate at any time.</div>
-  </div>
+  <script>
+    function toggleTerms() {
+      const btn  = document.getElementById('terms-btn');
+      const body = document.getElementById('terms-body');
+      btn.classList.toggle('open');
+      body.classList.toggle('open');
+    }
 
-  <hr class="div">
+    function updateBtn() {
+      const checked = document.getElementById('agree-check').checked;
+      document.getElementById('submit-btn').disabled = !checked;
+    }
 
-  <!-- PHASE 2 -->
-  <div class="phase-badge p2"><div class="dot"></div> Phase Two</div>
-  <div class="eyebrow">Month 1 – 2</div>
-  <h2 class="section-title">APEX Goes Live &amp;<br><em>Acquisition Ramp-Up.</em></h2>
-  <div class="rule"></div>
-  <p class="lead">APEX transitions from configuration to active operation within your CRM. Alongside it, optional acquisition programs are available to activate — giving you multiple channels generating pipeline simultaneously.</p>
+    function validateEmail(v) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    }
 
-  <!-- LinkedIn -->
-  <div class="prog-card">
-    <div class="prog-head dark">
-      <div class="prog-head-left">
-        <div class="prog-num">Optional Program 01</div>
-        <div class="prog-name">LinkedIn Outreach</div>
-      </div>
+    function showError(id, inputId) {
+      document.getElementById(id).classList.add('visible');
+      document.getElementById(inputId).classList.add('error');
+    }
+    function clearError(id, inputId) {
+      document.getElementById(id).classList.remove('visible');
+      document.getElementById(inputId).classList.remove('error');
+    }
 
-    </div>
-    <div class="prog-body">
-      <p class="prog-desc">Professional LinkedIn outreach deployed and fully managed by ScaleLogix. You choose how it is positioned and which approach fits your business — we handle all setup, sequencing, audience targeting, and ongoing management. Three configurations are available depending on your goals and preferences.</p>
-      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:18px;">
-        <div class="sys-cell">
-          <div class="sys-cell-label">Your Own Profile</div>
-          <div class="sys-cell-text">Campaigns run through your personal or company LinkedIn profile. Builds your brand presence while driving consistent prospecting volume. All messaging and sequencing managed by ScaleLogix.</div>
-        </div>
-        <div class="sys-cell">
-          <div class="sys-cell-label">Dedicated Outreach Profiles</div>
-          <div class="sys-cell-text">ScaleLogix deploys and manages dedicated outreach profiles on your behalf — fully managed, completely separate from your personal brand. Capacity scales based on your program scope. Ideal if you prefer separation or want outreach running independently of your personal presence.</div>
-        </div>
-        <div class="sys-cell">
-          <div class="sys-cell-label">Both Combined</div>
-          <div class="sys-cell-text">Run your own profile alongside dedicated outreach profiles for maximum reach and channel separation. This is the highest-output LinkedIn configuration and is available at a combined rate.</div>
-        </div>
-      </div>
-      <div class="prog-fine">Includes: campaign setup · audience targeting · message sequencing · monthly reporting &nbsp;·&nbsp; Month-to-month. 2 weeks written notice to cancel. Contact your ScaleLogix account team to activate or adjust your configuration.</div>
-    </div>
-  </div>
+    // Clear errors on input
+    ['field-name','field-company','field-email'].forEach(id => {
+      document.getElementById(id).addEventListener('input', function() {
+        const errMap = {'field-name':'err-name','field-company':'err-company','field-email':'err-email'};
+        clearError(errMap[id], id);
+      });
+    });
 
-  <!-- Lead Acquisition -->
-  <div class="prog-card">
-    <div class="prog-head purple">
-      <div class="prog-head-left">
-        <div class="prog-num">Optional Program 02</div>
-        <div class="prog-name">Lead Acquisition</div>
-      </div>
+    async function handleSubmit() {
+      const name    = document.getElementById('field-name').value.trim();
+      const company = document.getElementById('field-company').value.trim();
+      const email   = document.getElementById('field-email').value.trim();
+      let valid = true;
 
-    </div>
-    <div class="prog-body">
-      <p class="prog-desc">Pre-qualified leads delivered directly to your pipeline via Facebook's targeting infrastructure. Every lead has expressed genuine interest. Volume and delivery cadence vary based on niche, market competition, and your qualification criteria — these are strategic variables you control.</p>
-      <div class="prog-checks">
-        <div class="prog-check"><span class="prog-check-icon">✓</span> Interested, pre-qualified leads</div>
-        <div class="prog-check"><span class="prog-check-icon">✓</span> Facebook-based acquisition</div>
-        <div class="prog-check"><span class="prog-check-icon">✓</span> Delivered directly to your team</div>
-        <div class="prog-check"><span class="prog-check-icon">✓</span> Volume adjustable per engagement</div>
-        <div class="prog-check"><span class="prog-check-icon">✓</span> Custom package sizing available</div>
-        <div class="prog-check"><span class="prog-check-icon">✓</span> Typically 10–15 business days to launch</div>
-      </div>
-      <div class="note" style="margin:0 0 14px;"><div class="note-label">On Qualification Trade-offs</div><div class="note-text">Stricter qualification criteria may reduce overall volume. Niche competition and platform conditions also affect delivery cadence month to month. These trade-offs are strategic decisions you control — not performance guarantees from ScaleLogix.</div></div>
-      <div class="prog-fine">Launch setup includes: creative alignment · funnel configuration · CRM routing. Not a subscription — each order is independent. Contact your ScaleLogix account team to place or adjust an order.</div>
-    </div>
-  </div>
+      if (!name)                 { showError('err-name',    'field-name');    valid = false; }
+      if (!company)              { showError('err-company', 'field-company'); valid = false; }
+      if (!validateEmail(email)) { showError('err-email',   'field-email');   valid = false; }
+      if (!valid) return;
 
-  <hr class="div">
+      // Disable button and show loading state
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      btn.textContent = 'Activating…';
 
-  <!-- PHASE 3 -->
-  <div class="phase-badge p3"><div class="dot"></div> Phase Three</div>
-  <div class="eyebrow">Days 60 – 90</div>
-  <h2 class="section-title">Optimization,<br>Scaling &amp; <em>Growth.</em></h2>
-  <div class="rule"></div>
-  <p class="lead">By this stage your systems are fully warmed. APEX is generating consistent pipeline activity, messaging and targeting have been refined from live data, and your acquisition channels are running with stability. This is where you shift from setup to scale.</p>
+      const payload = {
+        name, company, email,
+        userAgent:    navigator.userAgent,
+        termsVersion: '2026-03-v2',
+        termsUrl:     window.location.href
+      };
 
-  <div class="sys-items" style="margin-bottom:32px;">
-    <div class="sys-item">
-      <div class="sys-dot rose"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,2.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="sys-item-text"><strong>APEX Lead Engine is fully warmed and operational.</strong> Deliverability, targeting precision, and AI response quality improve meaningfully over the first 60 days — what runs in Week 8 outperforms Week 1 considerably.</div>
-    </div>
-    <div class="sys-item">
-      <div class="sys-dot rose"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,2.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="sys-item-text"><strong>Messaging and targeting are refined based on real data.</strong> We optimize based on what is actually working in your niche — not assumptions. This is an ongoing process, not a one-time configuration.</div>
-    </div>
-    <div class="sys-item">
-      <div class="sys-dot rose"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7.5 8,2.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="sys-item-text"><strong>Optimization focuses on lead quality, booking efficiency, and close alignment.</strong> Volume matters — but qualified, closeable pipeline is the objective. We tune for both.</div>
-    </div>
-  </div>
+      let acceptanceId = 'SL-' + Date.now().toString(36).toUpperCase();
+      let serverTs     = new Date().toISOString();
 
-  <p style="font-size:14px; font-weight:700; color:var(--black); margin-bottom:14px;">Common partner actions at this stage:</p>
-  <div class="action-grid">
-    <div class="action-cell">
-      <div class="action-label">↑ Scale APEX</div>
-      <div class="action-text">Expand outbound volume, add prospect lists, and increase sequence capacity as your pipeline throughput grows.</div>
-    </div>
-    <div class="action-cell">
-      <div class="action-label">+ More Channels</div>
-      <div class="action-text">Add LinkedIn profiles, increase lead packages, or layer in new acquisition sources as your capacity scales.</div>
-    </div>
-    <div class="action-cell">
-      <div class="action-label">→ Paid Ad Management</div>
-      <div class="action-text">Activate Program 03 when you are ready to scale aggressively through fully managed paid media campaigns.</div>
-    </div>
-  </div>
+      try {
+        const res = await fetch('/api/golive-acceptance', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify(payload)
+        });
 
-  <!-- Ad Management -->
-  <div class="prog-card">
-    <div class="prog-head mid">
-      <div class="prog-head-left">
-        <div class="prog-num">Optional Program 03 &nbsp;·&nbsp; Available When You're Ready</div>
-        <div class="prog-name">Full-Service Ad Management</div>
-      </div>
+        if (res.ok) {
+          const data = await res.json();
+          if (data.acceptanceId) acceptanceId = data.acceptanceId;
+          if (data.timestamp)    serverTs     = data.timestamp;
+        } else {
+          // Non-blocking: log warning but still show success to client
+          console.warn('[ScaleLogix] API returned', res.status);
+        }
+      } catch (err) {
+        // Network error — non-blocking. Record is in Vercel function logs.
+        console.warn('[ScaleLogix] Could not reach API:', err.message);
+      }
 
-    </div>
-    <div class="prog-body">
-      <p class="prog-desc">A bespoke, fully managed paid advertising service. ScaleLogix builds a custom strategy around your business, handles all creative deployment and audience development, and owns end-to-end execution across platforms. Starts on Facebook and scales as your campaigns grow.</p>
-      <div class="prog-checks">
-        <div class="prog-check"><span class="prog-check-icon" style="color:var(--rose);">→</span> Consultation &amp; custom strategy build</div>
-        <div class="prog-check"><span class="prog-check-icon" style="color:var(--rose);">→</span> Ad creative &amp; audience deployment</div>
-        <div class="prog-check"><span class="prog-check-icon" style="color:var(--rose);">→</span> Budget pacing &amp; performance management</div>
-        <div class="prog-check"><span class="prog-check-icon" style="color:var(--rose);">→</span> Monthly performance reporting</div>
-      </div>
-      <div class="prog-fine">All advertising spend is client-funded and separate from ScaleLogix service fees. Platforms: Facebook (active) · Instagram · YouTube · Additional on request. Requires 30 days written notice to cancel. Contact your ScaleLogix account team to initiate.</div>
-    </div>
-  </div>
+      const ts = new Date(serverTs).toLocaleString('en-US', {
+        weekday:'long', year:'numeric', month:'long', day:'numeric',
+        hour:'2-digit', minute:'2-digit', second:'2-digit', timeZoneName:'short'
+      });
 
-  <hr class="div">
+      // Transition to success
+      document.getElementById('hero-section').style.display = 'none';
+      document.getElementById('confirm-card').style.display = 'none';
 
-  <!-- BIG PICTURE -->
-  <div class="big">
-    <div class="big-eyebrow">The Summary</div>
-    <div class="big-title">The Big Picture.</div>
-    <div class="big-grid">
-      <div class="big-cell">
-        <div class="big-cell-label">ICAS</div>
-        <div class="big-cell-text">ScaleLogix's shared acquisition infrastructure runs from Day 1 — introducing early deal flow while your dedicated systems come online.</div>
-      </div>
-      <div class="big-cell">
-        <div class="big-cell-label">APEX Lead Engine</div>
-        <div class="big-cell-text">Your dedicated, in-CRM acquisition system. Activates in Month 1–2 and becomes your primary independent outreach infrastructure as you scale.</div>
-      </div>
-      <div class="big-cell">
-        <div class="big-cell-label">Your Control</div>
-        <div class="big-cell-text">You control budget, program selection, and pacing. We advise, configure, and execute within the scope you choose.</div>
-      </div>
-      <div class="big-cell">
-        <div class="big-cell-label">Our Role</div>
-        <div class="big-cell-text">We guide you through each step and help you make decisions based on real data. We are your operational partner, not your revenue guarantee.</div>
-      </div>
-      <div class="big-cell">
-        <div class="big-cell-label">Optional Programs</div>
-        <div class="big-cell-text">LinkedIn Outreach, Lead Acquisition, and Ad Management are available via separate Order Form — activated on your timeline, as your business requires.</div>
-      </div>
-      <div class="big-cell">
-        <div class="big-cell-label">Long-Term Path</div>
-        <div class="big-cell-text">APEX is the foundation. Most agencies layer paid acquisition, partnerships, and channel-specific outbound on top of it as they scale beyond the first 90 days.</div>
-      </div>
-    </div>
-  </div>
+      const successEl = document.getElementById('success-screen');
+      successEl.classList.add('visible');
 
-  <!-- DISCLAIMER -->
-  <div class="disclaimer">
-    <div class="disclaimer-label">Important Disclaimer</div>
-    <p>Timelines, system descriptions, and operational examples outlined in this guide are based on typical partner experiences and are provided for informational purposes only. Actual results will vary depending on niche, market conditions, offer positioning, audience, budget allocation, sales execution, and external platform and regulatory factors.</p>
-    <p>ScaleLogix provides infrastructure, systems, and operational support. ScaleLogix does not guarantee specific lead volume, conversion rates, appointment volume, revenue, business outcomes, or client acquisition results of any kind. All paid media spend, advertising budgets, list acquisition costs, and third-party software subscriptions are the sole responsibility of the Licensee.</p>
-    <p>Optional programs — including LinkedIn Outreach, Lead Acquisition, and Full-Service Ad Management — are available only pursuant to a separate, signed Order Form and are not included in the base infrastructure license. ICAS represents a best-efforts operational support service and does not guarantee the distribution of any specific lead volume. APEX Lead Engine functionality is included as part of the licensed infrastructure and is subject to system availability, configuration timelines, and Licensee cooperation as defined in the executed Infrastructure License &amp; Operations Agreement.</p>
-    <p>This document is for informational purposes only and does not constitute or modify any contractual obligations. All commercial terms are governed exclusively by the executed Infrastructure License &amp; Operations Agreement between the parties.</p>
-  </div>
-
-</div>
-
-<!-- FOOTER -->
-<footer class="doc-footer">
-  <div class="doc-footer-brand">ScaleLogix AI</div>
-  <div class="doc-footer-contact">Confidential &nbsp;·&nbsp; ScaleMethods Partners LLC &nbsp;·&nbsp; acquisitions@scalemethods.com</div>
-</footer>
+      document.getElementById('success-timestamp').innerHTML =
+        `Confirmed by <strong>${name}</strong> · ${company}<br>${ts}<br>Acceptance ID: ${acceptanceId}`;
+    }
+  </script>
 
 </body>
 </html>
